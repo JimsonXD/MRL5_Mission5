@@ -1,0 +1,16 @@
+import React from "react";
+import Navbar from "../../commonComponents/Navbar";
+import Footer from "../../commonComponents/Footer";
+
+const Application = () => {
+  return (
+    <div className="flex flex-col justify-center">
+      <Navbar />
+      <p>Application</p>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Application;
