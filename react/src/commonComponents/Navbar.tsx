@@ -4,7 +4,7 @@ import Metrologo from "../assets/Metrologo.png";
 
 const Navbar: React.FC = () => {
   return (
-    <div className="navbar bg-base-100 px-4 py-2"> {/* Add padding using px-4 and py-2 */}
+    <div className="navbar bg-base-100 px-4 py-2"> 
       <div className="navbar-start">
         <img src={Metrologo} alt="Metro Logo" className="w-30 h-12 m-2" />
       </div>
