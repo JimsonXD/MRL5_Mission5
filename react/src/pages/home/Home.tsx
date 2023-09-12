@@ -7,6 +7,8 @@ const Home = () => {
     <div className="flex flex-col justify-center">
       <Navbar />
       <p>Home</p>
+      <p>test</p>
+      <p>test</p>
 
       <Footer />
     </div>

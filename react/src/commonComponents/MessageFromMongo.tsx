@@ -6,7 +6,7 @@ function MessageFromMongo() {
 
   const fetchMessage = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/message'); // Use Axios to make the GET request
+      const response = await axios.get('http://localhost:8080/api/message'); 
       const data = response.data;
       setMessage(data.message);
 

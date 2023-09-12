@@ -10,18 +10,23 @@ import Home from "./pages/home/Home";
 
 
 
+
 function App() {
   return (
     <Router>
       <Routes>
 
+
         <Route path="/" Component={Home} />
+        {/* <Route path="/rental-property-search" Component={RentalPropertySearch} />
         {/* <Route path="/rental-property-search" Component={RentalPropertySearch} />
         <Route path="/property-details" Component={PropertyDetails} />
         <Route path="/my-tenancy-application" Component={MyTenancyApplication} />
         <Route path="/application" Component={Application} />
         <Route path="/confirmation-details" Component={ConfirmationDetails} /> */}
          <Route path="/week1" Component={Main } /> 
+
+         
 
 
     </Routes>
