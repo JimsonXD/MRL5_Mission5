@@ -1,17 +1,17 @@
 import React from "react";
+import Metrologo from "../assets/Metrologo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebookF,
-  faInstagram,
-  faLinkedinIn,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF,faInstagram,faLinkedinIn,faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
     <footer>
       <div className="bg-turnersgrey text-white p-5  ">
+      <div className="flex items-center justify-center text-center p-4">
+        <img src={Metrologo} alt="Metro Logo" className="w-58 h-28 m-2" />
+      </div>
+
         <p className="flex items-center justify-center text-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -42,14 +42,14 @@ const Footer = () => {
         </p>
       </div>
 
-      <div className="footer-section bg-darkgrey p-5 px-20 text-white">
+      <div className="footer-section bg-darkgrey p-5 px-20 text-red-600">
         <div className="flex justify-center items-center">
           <ul className="flex space-x-4">
             <li className="group flex items-center py-10 px-10 cursor-pointer relative">
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-20 w-10 text-turnersred group-hover:text-white transition-colors duration-700"
+                  className="h-20 w-10 text-turnersred group-hover:text-white transition-colors duration-200"
                   fill="none"
                   viewBox="0 0 40 15"
                   stroke="currentColor"
