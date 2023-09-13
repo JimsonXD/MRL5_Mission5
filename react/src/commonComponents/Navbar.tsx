@@ -1,50 +1,61 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { Link } from "react-router-dom";
 import Metrologo from "../assets/Metrologo.png";
+import SearchBar from "./SearchBar";
 
 const Navbar: React.FC = () => {
   return (
-    <div className="navbar bg-base-100 px-4 py-2"> 
-      <div className="navbar-start">
-        <img src={Metrologo} alt="Metro Logo" className="w-30 h-12 m-2" />
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 p-2">
+    <nav className="bg-white">
+      <div className="flex items-center justify-between px-16 py-2 text-black">
+        <Link to="/" className="flex items-center">
+          <img src={Metrologo} alt="Metro Logo" className="w-30 h-12 m-2" />
+        </Link>
+
+        <ul className="hidden lg:flex space-x-8">
           <li>
-            <a>Home</a>
+            <Link to="/">Home</Link>
           </li>
-          <li tabIndex={0}>
+          <li>
             <details>
               <summary>Services</summary>
               <ul className="p-2">
                 <li>
-                  <a>Service1</a>
+                  <Link to="/">Page1</Link>
                 </li>
                 <li>
-                  <a>Service2</a>
+                  <Link to="/rental-property-search">Page2</Link>
                 </li>
                 <li>
-                  <a>Service3</a>
+                  <Link to="/property-details">Page3</Link>
+                </li>
+                <li>
+                  <Link to="/my-tenancy-application">Page4</Link>
+                </li>
+                <li>
+                  <Link to="/application">Page5</Link>
+                </li>
+                <li>
+                  <Link to="/confirmation-details">Page6</Link>
                 </li>
               </ul>
             </details>
           </li>
           <li>
-            <a>News</a>
+            <Link to="/news">News</Link>
           </li>
           <li>
-            <a>About Us</a>
+            <Link to="/about-us">About Us</Link>
           </li>
           <li>
-            <a>Contact</a>
+            <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <a>Sign In</a>
+            <Link to="/sign-in">Sign In</Link>
           </li>
         </ul>
       </div>
-      <div className="navbar-end"></div>
-    </div>
+      <SearchBar />
+    </nav>
   );
 };
 
