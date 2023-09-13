@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    text-align: center;
+    gap:4rem
+  }
+  
+  .flexItemleft {
+    background-color: #f1f1f1;
+    padding: 10px;
+    flex: 5%;
+    font-size: 20px;
+    border: 1px solid #ccc; /* Add a border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow */
+    border-radius: 20px; /* Add rounded corners */
+  }
+  
+  .flexItemright {
+    background-color: #f1f1f1;
+    padding: 10px;
+    flex: 5%;
+    font-size: 20px;
+
+    border: 1px solid #ccc; /* Add a border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow */
+    border-radius: 20px; /* Add rounded corners */
+  }
+
+  .flexContainer1 {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    text-align: center;
+    gap: 4rem;
+  }
+  
+  .flexItemleft1 {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgb(242, 242, 242);
+    font-size: 20px;
+  }
+  
+  .imageContainer {
+    flex: 1; /* This makes the image take up the available space on the left */
+  }
+  
+  .flexItemrightitle {
+    flex: 1; /* This makes the paragraph take up the available space on the right */
+    background-color: rgb(242, 242, 242);
+    font-size: 20px;
+  }
+  
+.SecondSlogan{
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 50px;
+ 
+}
+
+.ThirdSlogan{
+  text-align: center;
+  font-size: 25px;
+  background-color: #f70b0b;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  display: inline-block;
+  font-size: 16px;
+  gap: 1.5px;
+ 
+}
+
+
+.buttoncontainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.redbutton {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Carousel Testimonial */
+
+
