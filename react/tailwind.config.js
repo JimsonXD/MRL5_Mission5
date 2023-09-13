@@ -12,7 +12,7 @@ module.exports = {
       current: "currentColor",
       turnersblue: "#0073cf",
       turnersgrey: "#9a9b9c",
-      turnersred: "#b71234",
+      red: "#FF0000",
       lightgrey: "#d1d5db",
       darkgrey: "#363636",
       black: "#000000",

@@ -6,13 +6,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import "./styles.css";
 
+
 const ConfirmationDetailsChild = () => {
   return (
     <div className="bg-white py-12 px-16">
-      <div className="bg-gray-200 flex flex-col items-center justify-center p-4 mx-16 rounded-lg bg-image">
-        <div className="bg-gray-300 my-12 rounded-md p-24 text-center text-black opacity-90">
-          <h1>Thank you!!!</h1>✅
+      <div className="bg-gray-300 flex flex-col items-center justify-center p-4 mx-16 rounded-lg bg-image">
+        <div className="bg-white opacity-70 my-12 rounded-md p-24 text-center text-black">
+          <h1>Thank you!!!</h1>
           <p>
+
+<div className="img p-10 ml-16"></div>
+
+
             {" "}
             You've completed the
             <br /> tenancy agreement
@@ -23,7 +28,7 @@ const ConfirmationDetailsChild = () => {
             {" "}
             Our team will be in <br /> touch soon!
           </p>
-          <button className="btn btn-neutral bg-red-700 px-4 mt-6">
+          <button className="btn-secondary bg-red btn-md 0 px-4 mt-6 text-lg">
             Back to Home
           </button>
         </div>

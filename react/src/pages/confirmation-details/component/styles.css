@@ -3,3 +3,10 @@
     background-size: cover;
   }
   
+
+  .img {
+    background-image: url('https://en.pimg.jp/093/484/564/1/93484564.jpg');
+    background-size: 50px 50px;
+    background-repeat: no-repeat; /* Prevents background image from repeating */
+  }
+  
