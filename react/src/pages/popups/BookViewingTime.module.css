@@ -1,0 +1,37 @@
+.BookViewingTimeButtonContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-right: -950px;
+    margin-bottom: 25px;
+    gap: 10rem;
+    flex: 5;
+ 
+  }
+
+.BookViewingTimeBookButton {
+    
+    background-color: red;
+    color: white; /* Text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: 1px;
+    cursor: pointer;
+  }
+
+  /* Red Button with Border */
+  .BookViewingTimeCancelButton {
+    background-color: transparent;
+    color: red;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: 2px solid red;
+    cursor: pointer;
+  }
+
+  .CalendarBookViewingTime{
+    
+   margin-left: 300px;
+    display: flex;
+    
+ 
+   
+  }

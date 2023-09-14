@@ -5,6 +5,8 @@ import CarouselHomePage from '../home/CarouselHomePage';
 import Footer from "../../commonComponents/Footer";
 import HomePagePicture from '../../assets/HomePage.png';
 import BodyCorporateHomepage from '../../assets/BodyCorporateAdministration.png'
+import BookViewingTimespopups from '../../pages/popups/BookViewingTime'
+import EnquireNowpopups from '../../pages/popups/EnquireNowPopup'
 import styles from '../../pages/home/Home.module.css';
 
 
@@ -39,12 +41,13 @@ const Home = () => {
     <div className={styles.imageContainer}>
       <img
         src={HomePagePicture}
+       
         style={{
           maxWidth: '100%',
           height: 'auto',
           display: 'block',
         }}
-        alt="Your Image"
+        alt="Pic1"
       />
     </div>
     <div className={styles.flexItemrightitle}>
@@ -72,30 +75,30 @@ const Home = () => {
         {/* flexbox */}
         <div className={styles.flexContainer}>
       <div className={styles.flexItemleft}>Property Management<img
-      src={BodyCorporateHomepage}
+      src={BodyCorporateHomepage} alt="pic1"
     /></div>
       <div className={styles.flexItemright}>Body Corporate Administration<img
-      src={BodyCorporateHomepage}
+      src={BodyCorporateHomepage} alt="pic1"
       
      
     /></div>
       <div className={styles.flexItemright}>Building Management<img
-      src={BodyCorporateHomepage}
+      src={BodyCorporateHomepage} alt="pic1"
     /></div>
       <div className={styles.flexItemright}>Decluttering Management<img
-      src={BodyCorporateHomepage}
+      src={BodyCorporateHomepage} alt="pic1"
     /></div>
       <div className={styles.flexItemright}>Free Property Appraisals<img
-      src={BodyCorporateHomepage}
+      src={BodyCorporateHomepage} alt="pic1"
     /></div>
       <div className={styles.flexItemright}>Renovation Property Management<img
-      src={BodyCorporateHomepage}
+      src={BodyCorporateHomepage} alt="pic1"
     /></div>
       <div className={styles.flexItemright}>Investment Properties<img
-      src={BodyCorporateHomepage}
+      src={BodyCorporateHomepage} alt="pic1"
     /></div>
       <div className={styles.flexItemright}>Rental Properties<img
-      src={BodyCorporateHomepage}
+      src={BodyCorporateHomepage} alt="pic1"
     /></div>
     </div>
     <div className={styles.buttoncontainer}>
@@ -195,6 +198,9 @@ const Home = () => {
         </div>
       </div>
     </div>
+
+    <BookViewingTimespopups/>
+    <EnquireNowpopups/>
       </div>
       <Footer />
     </div>
