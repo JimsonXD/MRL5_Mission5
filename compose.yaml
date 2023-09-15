@@ -6,14 +6,18 @@ services:
       context: ./react
     ports:
       - 3000:3000
+    networks:
+      - team3network
 
   backend:
     build:
       context: ./express
     ports:
-      - 8080:8080  
+      - 8080:8080
     depends_on:
-      - mongodb  
+      - mongodb
+    networks:
+      - team3network
 
   mongodb:
     image: mongo:6
@@ -21,7 +25,11 @@ services:
       - database:/data/db
     ports:
       - 27017:27017
+    networks:
+      - team3network
 
 volumes:
   database:
 
+networks:
+  team3network:

@@ -1,17 +1,51 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faBed, faBath, faCar } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import Carousel from "./Carousel";
+import EnquirePopUp from "./EnquirePopUp";
+import BookToViewPopUp from "./BookToViewPopUp";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import SavePropertyPopUp from "./SavePropertyPopUp";
+
+library.add(faHeart);
 
 const PropertyDetailsChild = () => {
+  const [isPopupOpenA, setPopupOpenA] = useState(false);
+  const [isPopupOpenB, setPopupOpenB] = useState(false);
+  const [isPopupOpenC, setPopupOpenC] = useState(false);
+
+  const openPopupA = () => {
+    setPopupOpenA(true);
+  };
+
+  const closePopupA = () => {
+    setPopupOpenA(false);
+  };
+
+  const openPopupB = () => {
+    setPopupOpenB(true);
+  };
+
+  const closePopupB = () => {
+    setPopupOpenB(false);
+  };
+
+  const openPopupC = () => {
+    setPopupOpenC(true);
+  };
+
+  const closePopupC = () => {
+    setPopupOpenC(false);
+  };
+
   return (
     <div className="bg-white py-12">
       <div>
-        <div>
+        <div className="w-full">
           <Carousel />
         </div>
 
@@ -22,11 +56,21 @@ const PropertyDetailsChild = () => {
 
               <div className="flex items-center ml-2 w-full">
                 <span className="text-lg">400 per week</span>
-                <FontAwesomeIcon
-                  icon={faHeart}
-                  size="lg"
-                  className="ml-auto text-red-500"
-                />
+                <button onClick={openPopupC}>
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    size="lg"
+                    className="ml-auto text-red-500"
+                  />
+                </button>
+
+                {isPopupOpenC && (
+                  <div className="popup">
+                    <div className="popup-content">
+                      <SavePropertyPopUp onClose={closePopupC} />
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -69,10 +113,29 @@ const PropertyDetailsChild = () => {
 
       <div className="flex">
         <div className="flex w-full items-center pl-28 gap-6 p-8">
-          <button className="btn btn-secondary bg-red-600">
+          <button onClick={openPopupB} className="btn btn-secondary bg-red-600">
             Book to view the property
           </button>
-          <button className="btn btn-outline text-red-600">Enquire Now</button>
+
+          {isPopupOpenB && (
+            <div className="popup">
+              <div className="popup-content">
+                <BookToViewPopUp onClose={closePopupB} />
+              </div>
+            </div>
+          )}
+
+          <button onClick={openPopupA} className="btn btn-outline text-red-600">
+            Enquire Now
+          </button>
+
+          {isPopupOpenA && (
+            <div className="popup">
+              <div className="popup-content">
+                <EnquirePopUp onClose={closePopupA} />
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="flex px-28">
@@ -127,9 +190,17 @@ const PropertyDetailsChild = () => {
       </div>
 
       <div className="flex w-full items-center justify-center p-8">
-        <button className="btn btn-secondary bg-red-700">
+        <button onClick={openPopupB} className="btn btn-secondary bg-red-600">
           Book to view the property
         </button>
+
+        {isPopupOpenB && (
+          <div className="popup">
+            <div className="popup-content">
+              <BookToViewPopUp onClose={closePopupB} />
+            </div>
+          </div>
+        )}
       </div>
 
       <div className=" px-28 py-6">

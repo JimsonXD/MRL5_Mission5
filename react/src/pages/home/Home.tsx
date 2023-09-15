@@ -8,6 +8,7 @@ import BodyCorporateHomepage from '../../assets/BodyCorporateAdministration.png'
 import BookViewingTimespopups from '../../pages/popups/BookViewingTime'
 import EnquireNowpopups from '../../pages/popups/EnquireNowPopup'
 import styles from '../../pages/home/Home.module.css';
+import { Link } from "react-router-dom";
 
 
 
@@ -61,9 +62,17 @@ const Home = () => {
         our tailored services we offer as an Auckland property management
         company.
         <div className={styles.buttoncontainer}>
+
+
+        <Link to="/my-tenancy-application">
         <button className={styles.redbutton}>Property Owners</button>
+        </Link>
+        <Link to="/rental-property-search">
         <button className={styles.redbutton}>Rental Listings</button>
+        </Link>
+        <Link to="/my-tenancy-application">
         <button className={styles.redbutton}>My Tenancy Application</button>
+        </Link>
     </div>
 
       </p>

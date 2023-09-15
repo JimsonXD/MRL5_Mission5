@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestion } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const TenancyDetails = () => {
   return (
@@ -256,9 +257,17 @@ const TenancyDetails = () => {
             <button className="btn btn-outline px-16 text-red-600">
               Save for later
             </button>
-            <button className="btn btn-primary bg-red-600 px-16 text-white">
+
+
+            <Link to="/confirmation-details">
+            <button 
+            className="btn btn-primary bg-red-600 px-16 text-white">
               Submit
             </button>
+            </Link>
+
+
+
           </div>
         </div>
       </form>

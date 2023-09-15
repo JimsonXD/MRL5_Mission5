@@ -5,6 +5,7 @@ import {
   faDownload,
   faShare,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 interface PropertyListingProps {
   imageUrl: string;
@@ -50,11 +51,18 @@ const MyTenancyApplicationChild = () => (
         New Application sent by property manager
       </h2>
 
+
+
+      <Link to="/application">
       <PropertyListing
         imageUrl="https://s.oneroof.co.nz/image/17/3d/173d25d5aeed0933252ed1728e65adb6.jpg?x-oss-process=image/quality,q_80/resize,w_630/format,webp"
         price="400 per week"
         location="4 Sunnyvale Road, Greenlane, Auckland City"
       />
+      </Link>
+
+
+
 
       <h2 className="pt-20 pb-12 text-red">
         Previous Tenancy Applications History
