@@ -24,7 +24,7 @@ mongoose
   })
   .catch((error) => {
     console.error('MongoDB connection error:', error);
-    process.exit(1); 
+    process.exit(1);
   });
 
 const messageSchema = new mongoose.Schema({
@@ -39,13 +39,17 @@ app.get('/api/message', async (req, res) => {
     console.log('messageDoc:', messageDoc);
 
     if (!messageDoc) {
-      return res.status(404).json({ message: 'Message not found in the database' });
+      return res
+        .status(404)
+        .json({ message: 'Message not found in the database' });
     }
 
     return res.json(messageDoc);
   } catch (error) {
     console.error('Error fetching message from MongoDB:', error);
-    return res.status(500).json({ message: 'Error fetching message from MongoDB' });
+    return res
+      .status(500)
+      .json({ message: 'Error fetching message from MongoDB' });
   }
 });
 
