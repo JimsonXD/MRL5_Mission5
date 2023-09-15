@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const Property = require('./models/property');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
 const MONGODB_URI = 'mongodb://mongodb:27017/mydb'; 
+
 
 const corsOptions = {
   origin: 'http://localhost:3000',
@@ -32,6 +34,38 @@ const messageSchema = new mongoose.Schema({
 });
 
 const Message = mongoose.model('Message', messageSchema);
+
+
+
+
+
+
+
+
+app.get('/api/properties', async (req, res) => {
+  try {
+    const properties = await Property.find();
+    console.log('properties:', properties);
+
+    if (!properties || properties.length === 0) {
+      return res.status(404).json({ message: 'No properties found in the database' });
+    }
+
+    return res.json(properties);
+  } catch (error) {
+    console.error('Error fetching properties from MongoDB:', error);
+    return res.status(500).json({ message: 'Error fetching properties from MongoDB' });
+  }
+});
+
+
+
+
+
+
+
+
+
 
 app.get('/api/message', async (req, res) => {
   try {

@@ -1,16 +1,13 @@
 import React from "react";
 import Navbar from "../../commonComponents/Navbar";
 import Footer from "../../commonComponents/Footer";
-import RentalPropertyChild from "./component/RentalPropertyChild";
+import PropertyList from "./component/PropertyList";
 
 const RentalPropertySearch = () => {
   return (
     <div className="flex flex-col justify-center">
       <Navbar />
-      <RentalPropertyChild />
-      <RentalPropertyChild />
-      <RentalPropertyChild />
-      <RentalPropertyChild />
+      <PropertyList />
       <Footer />
     </div>
   );

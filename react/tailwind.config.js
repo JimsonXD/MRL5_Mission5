@@ -17,6 +17,8 @@ module.exports = {
       darkgrey: "#363636",
       black: "#000000",
       white: "#ffffff",
+      green: "#008000",
+      platinum: "#E5E4E2"
     },
   },
   plugins: [require("daisyui")],

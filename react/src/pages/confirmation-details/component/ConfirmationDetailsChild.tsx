@@ -5,6 +5,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 
 const ConfirmationDetailsChild = () => {
@@ -28,9 +29,16 @@ const ConfirmationDetailsChild = () => {
             {" "}
             Our team will be in <br /> touch soon!
           </p>
+
+
+          <Link to="/">
           <button className="btn-secondary bg-red btn-md 0 px-4 mt-6 text-lg">
             Back to Home
           </button>
+</Link>
+
+
+
         </div>
       </div>
 

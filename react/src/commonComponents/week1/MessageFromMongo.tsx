@@ -25,7 +25,7 @@ function MessageFromMongo() {
     </p>
     <button
       onClick={fetchMessage}
-      className="mt-4 bg-blue-500 text-white hover:bg-blue-600 px-4 py-2 rounded-full focus:outline-none focus:ring focus:ring-blue-300"
+      className="mt-4 bg-primary text-white hover:bg-blue-600 px-4 py-2 rounded-full focus:outline-none focus:ring focus:ring-blue-300"
     >
       Fetch Message
     </button>

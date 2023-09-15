@@ -2,15 +2,20 @@ import React from "react";
 import Metrologo from "../assets/Metrologo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { faFacebookF,faInstagram,faLinkedinIn,faTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebookF,
+  faInstagram,
+  faLinkedinIn,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
     <footer>
-      <div className="bg-turnersgrey text-white p-5  ">
-      <div className="flex items-center justify-center text-center p-4">
-        <img src={Metrologo} alt="Metro Logo" className="w-58 h-28 m-2" />
-      </div>
+      <div className="bg-turnersgrey text-white p-5">
+        <div className="flex items-center justify-center text-center p-4">
+          <img src={Metrologo} alt="Metro Logo" className="w-58 h-28 m-2" />
+        </div>
 
         <p className="flex items-center justify-center text-center">
           <svg
