@@ -5,13 +5,16 @@ import { Link } from "react-router-dom";
 
 const TenancyDetails = () => {
   return (
+    
     <div className="flex flex-col justify-center px-24 bg-white p-8">
+      
       <form>
         <div className="space-y-12 bg-gray-100 p-6 rounded-lg shadow-md">
           <div className="border-b border-gray-300 pb-12">
             <h2 className="text-lg font-semibold text-gray-800">
               Tenancy Details
             </h2>
+            
 
             <div className="grid grid-cols-1 gap-8">
               <div>

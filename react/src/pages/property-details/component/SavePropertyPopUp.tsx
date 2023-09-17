@@ -1,13 +1,38 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
-function SavePropertyPopUp(props: { onClose: any }) {
-  const { onClose } = props;
+interface SavePropertyPopUpProps {
+  onClose: () => void;
+}
 
-  const handleSubmit = () => {
-    onClose();
+function SavePropertyPopUp(props: SavePropertyPopUpProps) {
+  const { onClose } = props;
+  const [email, setEmail] = useState<string>('');
+
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/api/save-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.status === 201) {
+        // Email saved successfully
+        alert("Email sent successfully"); // Show a success alert
+        onClose();
+      } else {
+        const data = await response.json();
+        console.error('Error saving email:', data.message);
+        alert(`Error: ${data.message}`); // Show an error alert
+      }
+    } catch (error) {
+      console.error('Error saving email:', error);
+      alert("An error occurred"); // Show a generic error alert
+    }
   };
 
   const handleClose = () => {
@@ -42,6 +67,8 @@ function SavePropertyPopUp(props: { onClose: any }) {
               id="email"
               type="text"
               placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
