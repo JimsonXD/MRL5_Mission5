@@ -5,7 +5,7 @@ const Property = require('./models/property');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
-const MONGODB_URI = 'mongodb://mongodb:27017/mydb';
+const MONGODB_URI = 'mongodb://127.0.0.1:27017/mydb';
 
 const corsOptions = {
   origin: 'http://localhost:3000',
