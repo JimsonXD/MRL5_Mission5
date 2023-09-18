@@ -32,10 +32,8 @@ function EnquirePopUp(props: EnquirePopUpProps) {
     e.preventDefault();
 
     try {
-      // Send a POST request to your backend API
       await axios.post("http://localhost:8080/api/enquire-now", formData);
 
-      // Display a success message or close the popup
       alert("Enquiry submitted successfully!");
       onClose();
     } catch (error) {

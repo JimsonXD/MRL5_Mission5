@@ -1,39 +1,40 @@
-// TenancyDetails.js
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const TenancyDetails = () => {
   const [formData, setFormData] = useState({
     addressOfTenancy: "",
     rent: "",
     bond: "",
-    // Add other fields here based on your form
   });
 
-  // Handle input changes and update form data
+  const navigate = useNavigate();
+
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       await axios.post("http://localhost:8080/api/submittenancydetails", formData);
       alert("Form data submitted successfully");
+      
+      navigate('/confirmation-details'); 
     } catch (error) {
       console.error("An error occurred while submitting the form:", error);
       alert("An error occurred");
     }
   };
+  
 
   return (
     <div className="flex flex-col justify-center px-24 bg-white p-8">
       <form onSubmit={handleSubmit}>
         <div className="space-y-12 bg-platinum p-6 rounded-lg shadow-md">
 
-          {/* Tenancy Details */}
           <div className="border-gray-300">
             <h2 className="text-lg font-semibold text-gray-800 mb-8">
               Tenancy Details
@@ -96,8 +97,7 @@ const TenancyDetails = () => {
               </div>
             </div>
           </div>
-
-          {/* Tenancy Type */}
+ 
           <h2 className="text-lg text-gray-800">
             Tenancy Type
           </h2>
@@ -111,7 +111,6 @@ const TenancyDetails = () => {
                 onChange={handleChange}
               />
               Fixed
-              {/* Add other radio inputs here */}
             </label>
             <label className="flex items-center space-x-8 gap-2">
               <input
@@ -121,11 +120,9 @@ const TenancyDetails = () => {
                 onChange={handleChange}
               />
               Periodic
-              {/* Add other radio inputs here */}
             </label>
           </div>
 
-          {/* Bond Amount */}
           <div className="mt-4 w-1/4">
             <input
               type="text"
@@ -138,7 +135,6 @@ const TenancyDetails = () => {
             />
           </div>
 
-          {/* Rent Payment Method */}
           <h2 className="text-lg text-gray-800">
             Rent to be paid at
           </h2>
@@ -164,7 +160,6 @@ const TenancyDetails = () => {
             </label>
           </div>
 
-          {/* Bank Details */}
           <h2 className="text-lg font-semibold text-gray-800">
             Bank Details
           </h2>
@@ -219,13 +214,10 @@ const TenancyDetails = () => {
             </div>
           </div>
 
-          {/* Agreement Text */}
           <p>
             The Landlord and the tenant agree that:
-            {/* Add your agreement text here */}
           </p>
 
-          {/* Signature */}
           <h2 className="text-lg font-semibold text-gray-800 mb-6">
             SIGNATURE
           </h2>
@@ -280,7 +272,6 @@ const TenancyDetails = () => {
             </div>
           </div>
 
-          {/* Form Buttons */}
           <div className="flex justify-center gap-8">
             <button
               className="border-2 rounded-lg border-red px-16 text-red bg-white shadow-lg py-2  transform hover:scale-110 transition-transform duration-300 ease-in-out"
