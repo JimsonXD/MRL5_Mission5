@@ -6,7 +6,7 @@ const app = express();
 require("dotenv").config();
 
 const PORT = process.env.PORT || 8000;
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI ='mongodb://localhost:27017/mydb';
 const CORS_ORIGIN = process.env.CORS_ORIGIN;
 
 const corsOptions = {

@@ -89,44 +89,52 @@ const RentalPropertyChild = ({ property }: { property: Property }) => {
           {propertyListings.map((property) => (
             <li key={property._id}>
               <div className="bg-platinum bg-opacity-50 shadow-md rounded-lg overflow-hidden p-8 mb-12 mt-4 mr-4">
-                <div className="flex w-full gap-4">
-                  <div className="w-1/2 flex">
+
+
+                <div className="flex w-full gap-4 ">
+                  <div>
                     <Link to={`/property-details/${property._id}`}>
                       <img
                         src={property.imageUrl1}
-                        className="w-full h-full object-fill rounded-lg hover:scale-110 transform transition-transform duration-300 shadow-lg"
+                        className="w-full object-cover rounded-lg hover:scale-110 transform transition-transform duration-300 shadow-lg"
                         alt={`Property ${property._id}`}
+                        style={{ height: '525px', width: '50vw' }} 
                       />
                     </Link>
                   </div>
 
-                  <div className="px-2">
+                  <div className="px-2 w-1/2 "   style={{ height: '525px', width: '50vw' }} > 
                     <div className="flex w-1/2 gap-4 pb-4">
                       <img
                         src={property.imageUrl2}
-                        className="w-full h-52 object-cover rounded-lg hover:scale-110 transform transition-transform duration-300"
+                        className="w-full object-cover rounded-lg hover:scale-110 transform transition-transform duration-300"
                         alt={`Property ${property._id}`}
+                        style={{ height: '250px' }} 
                       />
                       <img
                         src={property.imageUrl3}
-                        className="w-full h-52 object-cover rounded-lg hover:scale-110 transform transition-transform duration-300"
+                        className="w-full object-cover rounded-lg hover:scale-110 transform transition-transform duration-300"
                         alt={`Property ${property._id}`}
+                        style={{ height: '250px' }} 
                       />
                     </div>
                     <div className="w-1/2 flex gap-4 pb-2 rounded-lg ">
                       <img
                         src={property.imageUrl4}
-                        className="w-full h-52 object-cover rounded-lg hover:scale-110 transform transition-transform duration-300"
+                        className="w-full object-cover rounded-lg hover:scale-110 transform transition-transform duration-300"
                         alt={`Property ${property._id}`}
+                        style={{ height: '250px' }} 
                       />
                       <img
                         src={property.imageUrl5}
-                        className="w-full h-52 object-cover rounded-lg hover:scale-110 transform transition-transform duration-300"
+                        className="w-full object-cover rounded-lg hover:scale-110 transform transition-transform duration-300"
                         alt={`Property ${property._id}`}
+                        style={{ height: '250px' }} 
                       />
                     </div>
                   </div>
                 </div>
+
 
                 <div className="flex justify-between .">
                   <div>

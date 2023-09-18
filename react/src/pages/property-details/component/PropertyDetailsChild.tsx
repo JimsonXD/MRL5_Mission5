@@ -87,38 +87,49 @@ const PropertyDetailsChild = () => {
       <div className="">
         <div className="w-full">
           <div className="bg-gray-400">
-            <div className="px-8 text-white flex flex-col mb-8">
-              <div className="flex w-full px-12 rounded-s-lg pt-2 pb-2">
-                <img src={image} className="w-full h-72 rounded-lg hover:scale-110 transform transition-transform duration-300" alt={property.name}/>
-              </div>
 
-              <div className="flex w-full gap-2 pt-2 px-18 justify-center cursor-pointer">
-                <img
-                  src={property.imageUrl2}
-                  className="w-1/5 h-1/3 pb-2 rounded-lg hover:shadow-lg hover:scale-110 transform transition-transform duration-300"
-                  onClick={() => handleImageClick(property.imageUrl2)}
-                  alt={property.name}
-                />
-                <img
-                  src={property.imageUrl3}
-                  className="w-1/5 h-1/3 pb-2 rounded-lg hover:shadow-lg hover:scale-110 transform transition-transform duration-300"
-                  onClick={() => handleImageClick(property.imageUrl3)}
-                  alt={property.name}
-                />
-                <img
-                  src={property.imageUrl4}
-                  className="w-1/5 h-1/3 pb-2 rounded-lg hover:shadow-lg hover:scale-110 transform transition-transform duration-300"
-                  onClick={() => handleImageClick(property.imageUrl4)}
-                  alt={property.name}
-                />
-                <img
-                  src={property.imageUrl5}
-                  className="w-1/5 h-1/3 pb-2 rounded-lg hover:shadow-lg hover:scale-110 transform transition-transform duration-300"
-                  onClick={() => handleImageClick(property.imageUrl5)}
-                  alt={property.name}
-                />
-              </div>
+
+            <div className="px-8 text-white flex flex-col mb-8">
+            <div className="flex w-full px-12 rounded-lg pt-2 pb-2">
+            <img
+  src={image}
+  className="w-full rounded-lg hover:scale-110 transform transition-transform duration-300"
+  alt={property.name}
+  style={{ height: '500px' }} 
+/>
+
+</div>
+
+<div className="flex w-full gap-2 pt-2 px-12 justify-center cursor-pointer">
+  <img
+    src={property.imageUrl2}
+    className="w-1/5 h-auto pb-2 rounded-lg hover:shadow-lg hover:scale-110 transform transition-transform duration-300"
+    onClick={() => handleImageClick(property.imageUrl2)}
+    alt={property.name}
+  />
+  <img
+    src={property.imageUrl3}
+    className="w-1/5 h-auto pb-2 rounded-lg hover:shadow-lg hover:scale-110 transform transition-transform duration-300"
+    onClick={() => handleImageClick(property.imageUrl3)}
+    alt={property.name}
+  />
+  <img
+    src={property.imageUrl4}
+    className="w-1/5 h-auto pb-2 rounded-lg hover:shadow-lg hover:scale-110 transform transition-transform duration-300"
+    onClick={() => handleImageClick(property.imageUrl4)}
+    alt={property.name}
+  />
+  <img
+    src={property.imageUrl5}
+    className="w-1/5 h-auto pb-2 rounded-lg hover:shadow-lg hover:scale-110 transform transition-transform duration-300"
+    onClick={() => handleImageClick(property.imageUrl5)}
+    alt={property.name}
+  />
+</div>
+
             </div>
+
+
           </div>
         </div>
 

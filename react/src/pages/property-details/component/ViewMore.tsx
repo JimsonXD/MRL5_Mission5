@@ -44,7 +44,7 @@ const ViewMore = ({ property }: { property: Property }) => {
                 to={`/property-details/${property._id}`}
                 className="text-black no-underline text-sm"
               >
-                <div className="flex flex-col w-full bg-lightgrey bg-opacity-20 rounded-lg hover:scale-110 transform transition-transform duration-300">
+                <div className="flex flex-col w-full bg-lightgrey bg-opacity-20 rounded-lg hover:scale-110 transform transition-transform duration-300 mb-4">
                   <div className="w-auto h-48 flex justify-center flex-wrap">
                     <img
                       src={property.imageUrl1}

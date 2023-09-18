@@ -44,8 +44,17 @@ function EnquirePopUp(props: EnquirePopUpProps) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
+
+
+
       <div className="bg-primary w-full max-w-screen-lg">
+        
         <form className="w-full bg-platinum p-8" onSubmit={handleFormSubmit}>
+
+        <div>
+  <h4 className="text-center pb-4">Enquire Now</h4>
+</div>
+
           <div className="flex flex-wrap -mx-4 mb-6">
             <div className="w-full md:w-1/2 px-4 mb-6 md:mb-0">
               <input

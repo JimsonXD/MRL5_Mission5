@@ -281,7 +281,7 @@ const TenancyDetails = () => {
             </button>
 
             <button
-              className="btn btn-primary bg-red-600 px-16 text-white"
+              className="bg-red rounded-lg uppercase px-16 text-white shadow-lg"
               type="submit"
             >
               Submit
