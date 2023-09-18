@@ -1,11 +1,13 @@
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const TenantDetails = () => {
   return (
     <div className="flex flex-col justify-center px-24 bg-white p-8">
       <form>
-        <div className="space-y-12 bg-gray-100 p-6 rounded-lg shadow-md">
-          <div className="border-b border-gray-300 pb-12">
+        <div className="space-y-12 bg-platinum p-6 rounded-lg shadow-md">
+          <div className=" border-gray-300 pb-4">
             <h2 className="text-lg font-semibold text-gray-800">
               Tenant Details
             </h2>
@@ -19,7 +21,7 @@ const TenantDetails = () => {
                     id="first-name"
                     autoComplete="given-name"
                     placeholder="First Name"
-                    className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                    className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                   />
                 </div>
               </div>
@@ -31,7 +33,7 @@ const TenantDetails = () => {
                     id="last-name"
                     autoComplete="family-name"
                     placeholder="Last Name"
-                    className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                    className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                   />
                 </div>
               </div>
@@ -43,7 +45,7 @@ const TenantDetails = () => {
                     type="email"
                     autoComplete="email"
                     placeholder="Email Address"
-                    className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-white-100 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                    className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-white-100 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                   />
                   <input
                     type="text"
@@ -51,7 +53,7 @@ const TenantDetails = () => {
                     id="city"
                     autoComplete="address-level2"
                     placeholder="Phone Number"
-                    className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                    className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                   />
                 </div>
               </div>
@@ -63,7 +65,7 @@ const TenantDetails = () => {
                     id="current-residential-address"
                     autoComplete="current-residential-address"
                     placeholder="Current residential address"
-                    className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                    className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                   />
                 </div>
               </div>
@@ -75,7 +77,7 @@ const TenantDetails = () => {
                     id="work-address"
                     autoComplete="work-address"
                     placeholder="Work address"
-                    className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                    className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                   />
                 </div>
               </div>
@@ -87,7 +89,7 @@ const TenantDetails = () => {
                     id="occupation"
                     autoComplete="occupation"
                     placeholder="Occupation"
-                    className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                    className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                   />
                 </div>
               </div>
@@ -97,7 +99,9 @@ const TenantDetails = () => {
                 Proof of identification
               </h3>
             </div>
-            <div className="flex">
+
+
+            <div className="flex justify-between">
               <div className="mt-6">
                 <label
                   htmlFor="passport"
@@ -114,9 +118,9 @@ const TenantDetails = () => {
                 <div className="mt-4 w-60">
                   <label
                     htmlFor="file-upload"
-                    className="py-2.5 px-12 w-full border-2 relative cursor-pointer rounded-md bg-white font-semibold text-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
+                    className="py-2 px-12 w-full text-gray border-1 relative cursor-pointer rounded-md bg-white font-semibold text-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                   >
-                    <span>＋ Upload PDF</span>
+                    <span><FontAwesomeIcon icon={faPlus} className="text-red"/> Upload PDF</span>
                     <input
                       type="file"
                       name="passport-file"
@@ -143,9 +147,9 @@ const TenantDetails = () => {
                 <div className="mt-4 w-60">
                   <label
                     htmlFor="file-upload"
-                    className="py-2.5 px-12 w-full border-2 relative cursor-pointer rounded-md bg-white font-semibold text-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
+                    className="py-2 px-12 w-full border-1 relative cursor-pointer rounded-md bg-white font-semibold text-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                   >
-                    <span>＋ Upload PDF</span>
+                 <span><FontAwesomeIcon icon={faPlus} className="text-red"/> Upload PDF</span>
                     <input
                       type="file"
                       name="passport-file"
@@ -172,9 +176,9 @@ const TenantDetails = () => {
                 <div className="mt-4 w-60">
                   <label
                     htmlFor="file-upload"
-                    className="py-2.5 px-12 w-full border-2 relative cursor-pointer rounded-md bg-white font-semibold text-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
+                    className="py-2 px-12 w-full border-1 relative cursor-pointer rounded-md bg-white font-semibold text-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                   >
-                    <span>＋ Upload PDF</span>
+                      <span><FontAwesomeIcon icon={faPlus} className="text-red"/> Upload PDF</span>
                     <input
                       type="file"
                       name="passport-file"
@@ -187,10 +191,13 @@ const TenantDetails = () => {
               </div>
             </div>
           </div>
-          <div className="border-b border-gray-300 pb-12">
-            <h2 className="text-lg font-semibold text-gray-800 mb-6">
+
+
+          <div className=" border-gray-300 pb-12">
+            <h3 className="text-lg font-semibold text-gray-800 mb-6">
+
               Proof Of Reference from Previous landlord
-            </h2>
+            </h3>
 
             <div className="flex gap-16">
               <div className="sm:col-span-3 w-1/3">
@@ -200,8 +207,8 @@ const TenantDetails = () => {
                     name="first-name"
                     id="first-name"
                     autoComplete="given-name"
-                    placeholder="First Name"
-                    className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                    placeholder="Previous Landlord Name"
+                    className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                   />
                 </div>
               </div>
@@ -212,8 +219,8 @@ const TenantDetails = () => {
                     name="last-name"
                     id="last-name"
                     autoComplete="family-name"
-                    placeholder="Last Name"
-                    className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                    placeholder="Previous Landlord Number"
+                    className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                   />
                 </div>
               </div>
@@ -222,6 +229,7 @@ const TenantDetails = () => {
             <div className="flex w-full mt-8 mb-12">
               <div className="w-1/3">
                 <p>Do you have pets ?</p>
+                <div className=" flex space-x-12">
                 <label>
                   <input type="radio" />
                   Yes
@@ -230,9 +238,11 @@ const TenantDetails = () => {
                   <input type="radio" />
                   No
                 </label>
+                </div>
               </div>
               <div className="w-1/3">
                 <p>Do you Smoke ?</p>
+                <div className=" flex space-x-12">
                 <label>
                   <input type="radio" />
                   Yes
@@ -241,11 +251,12 @@ const TenantDetails = () => {
                   <input type="radio" />
                   No
                 </label>
+                </div>
               </div>
             </div>
 
-            <button className="btn btn-outline px-16 text-red-600">
-              ＋ add more tenants
+            <button className="btn-outline px-12 text-ruby border-2 rounded-lg py-2 bg-white uppercase text-sm hover:shadow-lg shadow-lg">
+            <FontAwesomeIcon icon={faPlus} className="text-red text-sm"/> add more tenants
             </button>
           </div>
         </div>

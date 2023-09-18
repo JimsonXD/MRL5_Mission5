@@ -2,7 +2,7 @@ import React from "react";
 
 function SearchBar() {
   return (
-    <div className="text-sm bg-white sm:mx-16">
+    <div className="text-sm bg-white sm:mx-16 pb-8">
       <div className="form-control">
         <input
           type="text"

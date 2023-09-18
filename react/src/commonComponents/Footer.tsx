@@ -4,16 +4,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookF,
-  faInstagram,
   faLinkedinIn,
+  faSquareInstagram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
     <footer>
-      <div className="bg-turnersgrey text-white p-5">
-        <div className="flex items-center justify-center text-center p-4">
+      <div className="bg-black text-white p-5">
+        <div className="flex items-center justify-center text-center py-8">
           <img src={Metrologo} alt="Metro Logo" className="w-58 h-28 m-2" />
         </div>
 
@@ -47,7 +47,7 @@ const Footer = () => {
         </p>
       </div>
 
-      <div className="footer-section bg-darkgrey p-5 px-20 text-red-600">
+      <div className="footer-section bg-black text-red-600">
         <div className="flex justify-center items-center">
           <ul className="flex space-x-4">
             <li className="group flex items-center py-10 px-10 cursor-pointer relative">
@@ -95,7 +95,7 @@ const Footer = () => {
                   />
 
                   <FontAwesomeIcon
-                    icon={faInstagram}
+                    icon={faSquareInstagram}
                     size="sm"
                     className="text-red group-hover:text-white transition-colors duration-700"
                   />

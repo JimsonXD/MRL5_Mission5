@@ -1,11 +1,18 @@
-import React from "react";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Metrologo from "../assets/Metrologo.png";
 import SearchBar from "./SearchBar";
 
 const Navbar: React.FC = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto">
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="flex items-center">
@@ -14,44 +21,120 @@ const Navbar: React.FC = () => {
 
           <ul className="hidden lg:flex space-x-8">
             <li>
-              <Link to="/">Home</Link>
+              <Link
+                to="/"
+                className="no-underline hover:bg-platinum hover:bg-opacity-50 py-2 rounded hover:text-darkgrey text-silver"
+              >
+                Home
+              </Link>
             </li>
-            <li>
-              <details>
-                <summary>Services</summary>
-                <ul className="p-2">
+
+            <li className="relative">
+              <Link
+                to="#"
+                className="no-underline hover:bg-platinum hover:bg-opacity-50 py-2 rounded hover:text-darkgrey text-silver"
+              >
+                Services
+              </Link>
+              <svg
+                onClick={toggleDropdown}
+                className="w-4 h-4 inline-block ml-2 -mt-1 cursor-pointer"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                // fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M3.293 7.293a1 1 0 011.414 0L10 12.586l5.293-5.293a1 1 0 111.414 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              {/* Dropdown menu */}
+              {isDropdownOpen && (
+                <ul className="absolute py-4 bg-silver bg-opacity-25 border rounded shadow-lg flex flex-col justify-center text-align-center ">
                   <li>
-                    <Link to="/">Page1</Link>
+                    <Link
+                      to="/"
+                      className="block px-4 py-2 hover:bg-ruby hover:text-white text-black no-underline mr-8"
+                    >
+                      Page1
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/rental-property-search">Page2</Link>
+                    <Link
+                      to="/rental-property-search"
+                      className="block px-4 py-2  hover:bg-ruby hover:text-white  text-black no-underline mr-8"
+                    >
+                      Page2
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/property-details">Page3</Link>
+                    <Link
+                      to="/property-details"
+                      className="block px-4 py-2  hover:bg-ruby hover:text-white  text-black no-underline mr-8"
+                    >
+                      Page3
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/my-tenancy-application">Page4</Link>
+                    <Link
+                      to="/my-tenancy-application"
+                      className="block px-4 py-2 hover:bg-ruby hover:text-white  text-black no-underline mr-8"
+                    >
+                      Page4
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/application">Page5</Link>
+                    <Link
+                      to="/application"
+                      className="block px-4 py-2 hover:bg-ruby hover:text-white  text-black no-underline mr-8"
+                    >
+                      Page5
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/confirmation-details">Page6</Link>
+                    <Link
+                      to="/confirmation-details"
+                      className="block px-4 py-2 hover:bg-ruby hover:text-white  text-black no-underline mr-8"
+                    >
+                      Page6
+                    </Link>
                   </li>
                 </ul>
-              </details>
+              )}
+            </li>
+
+            <li>
+              <Link
+                to="/news"
+                className="no-underline hover:bg-platinum hover:bg-opacity-50 py-2 rounded hover:text-darkgrey text-silver"
+              >
+                News
+              </Link>
             </li>
             <li>
-              <Link to="/news">News</Link>
+              <Link
+                to="/about-us"
+                className="no-underline hover:bg-platinum hover:bg-opacity-50 py-2 rounded hover:text-darkgrey text-silver"
+              >
+                About Us
+              </Link>
             </li>
             <li>
-              <Link to="/about-us">About Us</Link>
+              <Link
+                to="/contact"
+                className="no-underline hover:bg-platinum hover:bg-opacity-50 py-2 rounded hover:text-darkgrey text-silver"
+              >
+                Contact
+              </Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-            <li>
-              <Link to="/sign-in">Sign In</Link>
+              <Link
+                to="/sign-in"
+                className="no-underline hover:bg-platinum hover:bg-opacity-50 py-2 rounded hover:text-darkgrey text-silver"
+              >
+                Sign In
+              </Link>
             </li>
           </ul>
 
@@ -79,14 +162,16 @@ const Navbar: React.FC = () => {
       <div className="lg:hidden">
         <ul className="space-y-4 p-4">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" className="no-underline">
+              Home
+            </Link>
           </li>
           <li>
             <details>
               <summary>Services</summary>
               <ul className="p-2">
                 <li>
-                  <Link to="/">Page1</Link>
+                  <Link to="/page1">Page1</Link>
                 </li>
                 <li>
                   <Link to="/rental-property-search">Page2</Link>
@@ -107,16 +192,24 @@ const Navbar: React.FC = () => {
             </details>
           </li>
           <li>
-            <Link to="/news">News</Link>
+            <Link to="/news" className="no-underline">
+              News
+            </Link>
           </li>
           <li>
-            <Link to="/about-us">About Us</Link>
+            <Link to="/about-us" className="no-underline">
+              About Us
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact" className="no-underline">
+              Contact
+            </Link>
           </li>
           <li>
-            <Link to="/sign-in">Sign In</Link>
+            <Link to="/sign-in" className="no-underline">
+              Sign In
+            </Link>
           </li>
         </ul>
       </div>

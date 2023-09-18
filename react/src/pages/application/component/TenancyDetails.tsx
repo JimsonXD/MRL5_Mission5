@@ -9,9 +9,11 @@ const TenancyDetails = () => {
     <div className="flex flex-col justify-center px-24 bg-white p-8">
       
       <form>
-        <div className="space-y-12 bg-gray-100 p-6 rounded-lg shadow-md">
-          <div className="border-b border-gray-300 pb-12">
-            <h2 className="text-lg font-semibold text-gray-800">
+        <div className="space-y-12 bg-platinum p-6 rounded-lg shadow-md">
+
+<div></div>
+          <div className="border-gray-300">
+            <h2 className="text-lg font-semibold text-gray-800 mb-8">
               Tenancy Details
             </h2>
             
@@ -24,29 +26,29 @@ const TenancyDetails = () => {
                   id="address-of-tenancy"
                   autoComplete="address-of-tenancy"
                   placeholder="Address of Tenancy"
-                  className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                  className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                 />
               </div>
 
 
 
-<div className="flex w-full">
-              <div className="mt-2 w-1/2 pr-24">
+<div className="flex w-full justify-between">
+              <div className="w-1/4 flex">
                 <input
                   type="text"
                   name="rent"
                   id="rent"
                   autoComplete="rent"
                   placeholder="$ Rent"
-                  className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                  className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                 />
               </div>
-              <div className="mt-4 space-x-4 gap-24 w-full px-8">
-                <label className="gap-8 space-x-8 items-center">
+              <div className="flex w-3/4 justify-between px-16 py-2">
+                <label className="">
                   <input type="radio" name="payment-frequency" value="weekly" />
                   Weekly
                 </label>
-                <label className="p-16">
+                <label className="">
                   <input
                     type="radio"
                     name="payment-frequency"
@@ -62,13 +64,17 @@ const TenancyDetails = () => {
                   />
                   Monthly
                 </label>
-              </div></div>
+           
+              </div>
+              </div>
 
 
             </div>
           </div>
 
-          <h2 className="text-lg font-semibold text-gray-800 mb-6">
+
+
+          <h2 className="text-lg text-gray-800">
             Tenancy Type
           </h2>
 
@@ -77,7 +83,7 @@ const TenancyDetails = () => {
               <input type="radio" name="tenancy-type" value="fixed"/>
               
               Fixed
-              <div className="w-6 h-6 flex items-center justify-center rounded-full bg-red-500">
+              <div className="w-6 h-6 flex items-center justify-center rounded-full bg-ruby">
                 <FontAwesomeIcon
                   icon={faQuestion}
                   className="text-white text-sm"
@@ -87,7 +93,7 @@ const TenancyDetails = () => {
             <label className="flex items-center space-x-8 gap-2">
               <input type="radio" name="tenancy-type" value="periodic" />
               Periodic
-              <div className="w-6 h-6 flex items-center justify-center rounded-full bg-red-500">
+              <div className="w-6 h-6 flex items-center justify-center rounded-full bg-ruby">
                 <FontAwesomeIcon
                   icon={faQuestion}
                   className="text-white text-sm"
@@ -96,18 +102,18 @@ const TenancyDetails = () => {
             </label>
           </div>
 
-          <div className="mt-2 w-1/4">
+          <div className="mt-4 w-1/4">
             <input
               type="text"
               name="bond"
               id="bond"
               autoComplete="bond"
-              placeholder="$ Bond"
-              className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+              placeholder="$ Bond Amount"
+              className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
             />
           </div>
 
-          <h2 className="text-lg font-semibold text-gray-800 mb-6">
+          <h2 className="text-lg text-gray-800">
             Rent to be paid at
           </h2>
 
@@ -129,7 +135,7 @@ const TenancyDetails = () => {
 
 
 
-          <h2 className="text-lg font-semibold text-gray-800 mb-6">
+          <h2 className="text-lg font-semibold text-gray-800">
             Bank Details
           </h2>
 
@@ -140,8 +146,8 @@ const TenancyDetails = () => {
                 name="first-name"
                 id="first-name"
                 autoComplete="given-name"
-                placeholder="First Name"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                placeholder="Account Number"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
               />
             </div>
             <div>
@@ -150,8 +156,8 @@ const TenancyDetails = () => {
                 name="last-name"
                 id="last-name"
                 autoComplete="family-name"
-                placeholder="Last Name"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                placeholder="Account Holder Name"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
               />
             </div>
           </div>
@@ -163,8 +169,8 @@ const TenancyDetails = () => {
                 name="first-name"
                 id="first-name"
                 autoComplete="given-name"
-                placeholder="First Name"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                placeholder="Bank Name"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
               />
             </div>
             <div>
@@ -173,8 +179,8 @@ const TenancyDetails = () => {
                 name="last-name"
                 id="last-name"
                 autoComplete="family-name"
-                placeholder="Last Name"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                placeholder="Branch"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
               />
             </div>
           </div>
@@ -218,7 +224,7 @@ const TenancyDetails = () => {
                 id="signed-by-tenant"
                 autoComplete="sign-by-tenant"
                 placeholder="Signed by Tenant"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
               />
             </div>
             <div>
@@ -228,7 +234,7 @@ const TenancyDetails = () => {
                 id="date-signed-by-tenant"
                 autoComplete="date-signed-by-tenant"
                 placeholder="Date signed by tenant"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
               />
             </div>
           </div>
@@ -241,7 +247,7 @@ const TenancyDetails = () => {
                 id="signed-by-landlord"
                 autoComplete="signed-by-landlord"
                 placeholder="Signed by Landlord"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
               />
             </div>
             <div>
@@ -251,21 +257,20 @@ const TenancyDetails = () => {
                 id="date-signed-by-landlord"
                 autoComplete="date-signed-by-landlord"
                 placeholder="Date signed by Landlord"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
               />
             </div>
           </div>
 
           <div className="flex justify-center gap-8">
-            <button className="btn btn-outline px-16 text-red-600">
+            <button className="border-2 rounded-lg border-red px-16 text-red bg-white shadow-lg py-2  transform hover:scale-110 transition-transform duration-300 ease-in-out">
               Save for later
             </button>
 
 
             <Link to="/confirmation-details">
-            <button 
-            className="btn btn-primary bg-red-600 px-16 text-white">
-              Submit
+            <button className="border-2 rounded-lg border-red px-16 text-white bg-red shadow-lg py-2  transform hover:scale-110 transition-transform duration-300 ease-in-out">
+              SUBMIT
             </button>
             </Link>
 

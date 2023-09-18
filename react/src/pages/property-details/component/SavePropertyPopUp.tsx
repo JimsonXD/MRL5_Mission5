@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { faHome, faHomeLg, faHomeLgAlt, faHomeUser, faHouseChimney } from "@fortawesome/free-solid-svg-icons";
 
 interface SavePropertyPopUpProps {
   onClose: () => void;
@@ -40,23 +41,23 @@ function SavePropertyPopUp(props: SavePropertyPopUpProps) {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 ">
-      <div className="bg-platinum w-full max-w-screen-lg p-8 rounded-lg shadow-lg pb-24 pt-24">
+    <div className="fixed inset-0 flex items-center justify-center z-50 bg-transparent ">
+      <div className="bg-platinum w-1/2 max-w-screen-lg p-8 rounded-lg shadow-lg pb-24 pt-24">
         <div className="flex">
           <div className="flex justify-end w-1/2" style={{ fontSize: "3rem" }}>
-            🏠
+          <FontAwesomeIcon icon={faHouseChimney} className=" pb-4" />
           </div>
 
           <button
             onClick={handleClose}
-            className="flex justify-end w-1/2 pr-8 pt-3"
+            className="flex justify-end w-1/2 pr-8 pb-8 bg-platinum"
             style={{ fontSize: "1.5rem" }}
           >
             ❌
           </button>
         </div>
 
-        <h2 className="text-3xl font-semibold flex justify-center">
+        <h2 className="text-3xl font-semibold flex justify-center text-black">
           Save the Property
         </h2>
 
@@ -77,29 +78,29 @@ function SavePropertyPopUp(props: SavePropertyPopUpProps) {
             type="button"
             onClick={handleSubmit}
           >
-            Send
+            Submit
           </button>
         </form>
 
         <div className="flex justify-center mt-4">
-          <label className="flex items-center space-x-2 text-sm">
+          <label className="flex items-center space-x-2 text-md text-black">
             <input type="checkbox" className="form-checkbox" />
             <span>Details should be sent to your Email?</span>
           </label>
         </div>
 
-        <p className="my-4 text-gray-600 text-center">OR</p>
-
+        <p className="my-4 text-black text-center">OR</p>
+<p className="text-center">Login with</p>
         <div className="flex items-center space-x-4 justify-center">
-          <FontAwesomeIcon icon={faGoogle} className="text-blue-600 text-2xl" />
+          <FontAwesomeIcon icon={faGoogle} className=" text-2xl" />
           <FontAwesomeIcon
             icon={faFacebook}
-            className="text-blue-800 text-2xl"
+            className="text-2xl"
           />
           <div style={{ fontSize: "2rem" }}>⊕</div>
         </div>
 
-        <h6 className="text-center mt-4 text-gray-600">
+        <h6 className="text-center mt-4 text-black">
           Already have an account? <a className="text-red">Sign in</a>
         </h6>
       </div>

@@ -21,7 +21,7 @@ function App() {
 
          <Route path="/" Component={Home} />
         <Route path="/rental-property-search" Component={RentalPropertySearch} />
-        <Route path="/property-details" Component={PropertyDetails} />
+        <Route path="/property-details/:id" Component={PropertyDetails} />
         <Route path="/my-tenancy-application" Component={MyTenancyApplication} />
         <Route path="/application" Component={Application} />
         <Route path="/confirmation-details" Component={ConfirmationDetails} />

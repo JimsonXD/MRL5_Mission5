@@ -1,10 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const propertyRoutes = require('./routes/propertyRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
-const MONGODB_URI = 'mongodb://mongodb:27017/mydb';
+const MONGODB_URI = 'mongodb://localhost:27017/mydb';
 
 const corsOptions = {
   origin: 'http://localhost:3000',
@@ -31,33 +32,9 @@ mongoose
     process.exit(1);
   });
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This is used in when user like to saved the property and click the heart section and fill out form
-const emailSchema = new mongoose.Schema({
-  email: String,
-});
-// This is used in when user like to saved the property and click the heart section and fill out form
-const Email = mongoose.model('Email', emailSchema);
-// This is used in when user like to saved the property and click the heart section and fill out form
-app.post('/api/save-email', async (req, res) => {
-  try {
-    const { email } = req.body;
+app.use('/api/properties', propertyRoutes);
 
-    if (!email) {
-      return res.status(400).json({ message: 'Email is required' });
-    }
 
-    const currentTime = Date.now(); // Get the current timestamp in milliseconds
-
-    const newEmail = new Email({ email, timestamp: currentTime }); // Add timestamp to your MongoDB document
-    await newEmail.save();
-
-    return res.status(201).json({ message: 'Email saved successfully' });
-  } catch (error) {
-    console.error('Error saving email to MongoDB:', error);
-    return res.status(500).json({ message: 'Error saving email to MongoDB' });
-  }
-});
 
 //////////////////////////////////////////////////////
 //-this is for enquire pop-up on property details
