@@ -10,6 +10,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
+
+
   return (
     <footer>
       <div className="bg-black text-white p-5">
@@ -46,6 +48,8 @@ const Footer = () => {
           09 391 4642 | +64 21 642 119 | info@metronz.co.nz
         </p>
       </div>
+
+
 
       <div className="footer-section bg-black text-red-600">
         <div className="flex justify-center items-center">
@@ -159,6 +163,10 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+
+
+
+
     </footer>
   );
 };
