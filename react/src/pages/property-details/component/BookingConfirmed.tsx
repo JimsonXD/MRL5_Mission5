@@ -45,7 +45,7 @@ const BookingConfirmed = (props: BookingConfirmedProps) => {
         <div className="flex ml-80 pl-80 mt-12">
           <button
             className="btn-lg bg-lightgrey rounded-lg"
-            onClick={props.onClose} 
+            onClick={props.onClose}
           >
             ❌
           </button>

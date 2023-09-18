@@ -8,7 +8,7 @@ import PropertyDetails from "./pages/property-details/PropertyDetails";
 import MyTenancyApplication from "./pages/my-tenancy-application/MyTenancyApplication";
 import Application from "./pages/application/Application";
 import ConfirmationDetails from "./pages/confirmation-details/ConfirmationDetails";
-import DataTest from "./DataTest";
+;
 
 
 
@@ -21,7 +21,7 @@ function App() {
 
          <Route path="/" Component={Home} />
         <Route path="/rental-property-search" Component={RentalPropertySearch} />
-        <Route path="/property-details" Component={PropertyDetails} />
+        <Route path="/property-details/:id" Component={PropertyDetails} />
         <Route path="/my-tenancy-application" Component={MyTenancyApplication} />
         <Route path="/application" Component={Application} />
         <Route path="/confirmation-details" Component={ConfirmationDetails} />
@@ -29,7 +29,7 @@ function App() {
         <Route path="/week1" Component={Main} /> 
         <Route path="week01" Component={CrudWeek1} />     
 
-        <Route path="/" Component={DataTest} />    
+          
 
 
     </Routes>

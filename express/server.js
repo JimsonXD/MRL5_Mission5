@@ -1,10 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const Property = require('./models/property');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
-const MONGODB_URI = 'mongodb://127.0.0.1:27017/mydb';
+const MONGODB_URI = 'mongodb://mongodb:27017/mydb';
 
 const corsOptions = {
   origin: 'http://localhost:3000',
@@ -31,31 +32,38 @@ mongoose
     process.exit(1);
   });
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This is used in when user like to saved the property and click the heart section and fill out form
+// Define a Mongoose schema for emails
 const emailSchema = new mongoose.Schema({
-  email: String,
+  email: {
+    type: String,
+    required: true,
+  },
+  timestamp: {
+    type: Date,
+    default: Date.now,
+  },
 });
-// This is used in when user like to saved the property and click the heart section and fill out form
+
+// Create a Mongoose model based on the schema
 const Email = mongoose.model('Email', emailSchema);
-// This is used in when user like to saved the property and click the heart section and fill out form
+
+// Define the POST endpoint to save the email
 app.post('/api/save-email', async (req, res) => {
   try {
+    // Extract the email from the request body
     const { email } = req.body;
 
-    if (!email) {
-      return res.status(400).json({ message: 'Email is required' });
-    }
+    // Perform any necessary validation here (e.g., check if email is valid)
 
-    const currentTime = Date.now(); // Get the current timestamp in milliseconds
-
-    const newEmail = new Email({ email, timestamp: currentTime }); // Add timestamp to your MongoDB document
+    // Create a new Email document and save it to the database
+    const newEmail = new Email({ email });
     await newEmail.save();
 
-    return res.status(201).json({ message: 'Email saved successfully' });
+    // Send a success response
+    res.status(201).json({ message: 'Email saved successfully' });
   } catch (error) {
-    console.error('Error saving email to MongoDB:', error);
-    return res.status(500).json({ message: 'Error saving email to MongoDB' });
+    console.error('Error saving email:', error);
+    res.status(500).json({ message: 'An error occurred' });
   }
 });
 
@@ -178,5 +186,72 @@ app.get('/api/bookings', async (req, res) => {
     res.status(500).json({ message: 'Error retrieving bookings' });
   }
 });
+/////////////////////////////////////////////////////////////////////////////////
+
+const tenancyDetailsSchema = new mongoose.Schema({
+  addressOfTenancy: String,
+  rent: String,
+  bond: String,
+});
+
+const TenancyDetails = mongoose.model('TenancyDetails', tenancyDetailsSchema);
+
+// Create a route for handling POST requests from your React component
+app.post('/api/submittenancydetails', async (req, res) => {
+  try {
+    const formData = req.body;
+
+    // Create a new document in the MongoDB collection
+    const newTenancyDetails = new TenancyDetails(formData);
+    await newTenancyDetails.save();
+
+    // Respond with a success message
+    res.status(201).json({ message: 'Form data submitted successfully' });
+  } catch (error) {
+    console.error('An error occurred while submitting the form:', error);
+    res.status(500).json({ message: 'An error occurred' });
+  }
+});
 
 //////////////////////////////Property Owners Page////////////////////////////
+app.get('/api/properties', async (req, res) => {
+  try {
+    const properties = await Property.find();
+
+    if (!properties || properties.length === 0) {
+      return res
+        .status(404)
+        .json({ message: 'No properties found in the database' });
+    }
+
+    return res.json(properties);
+  } catch (error) {
+    console.error('Error fetching properties from MongoDB:', error);
+    return res
+      .status(500)
+      .json({ message: 'Error fetching properties from MongoDB' });
+  }
+});
+
+app.get('/api/properties/:id', async (req, res) => {
+  const id = req.params.id;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ error: 'Invalid ID format' });
+  }
+
+  try {
+    const property = await Property.findOne({ _id: id });
+
+    if (!property) {
+      return res.status(404).json({ error: 'Property not found' });
+    }
+
+    res.json(property);
+  } catch (error) {
+    console.error('Error fetching property from MongoDB:', error);
+    return res
+      .status(500)
+      .json({ message: 'Error fetching property from MongoDB' });
+  }
+});

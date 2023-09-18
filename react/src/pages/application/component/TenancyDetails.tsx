@@ -1,28 +1,18 @@
+// TenancyDetails.js
 import React, { useState } from "react";
 import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faQuestion } from "@fortawesome/free-solid-svg-icons";
-// import { Link } from "react-router-dom"
 
 const TenancyDetails = () => {
-  // Create a state object to manage form data
   const [formData, setFormData] = useState({
     addressOfTenancy: "",
     rent: "",
     bond: "",
-    firstName: "",
-    lastName: "",
-    accountDetails: "",
-    bankName: "",
-    signedByTenant: "",
-    dateSignedByTenant: "",
-    signedByLandlord: "",
-    dateSignedByLandlord: "",
+    // Add other fields here based on your form
   });
 
   // Handle input changes and update form data
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const { name, value } = e.currentTarget;
     setFormData({ ...formData, [name]: value });
   };
 
@@ -30,21 +20,22 @@ const TenancyDetails = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      // Send form data to the server
       await axios.post("http://localhost:8080/api/submittenancydetails", formData);
-      // Redirect to a confirmation page or perform other actions as needed
-     
+      alert("Form data submitted successfully");
     } catch (error) {
       console.error("An error occurred while submitting the form:", error);
+      alert("An error occurred");
     }
   };
 
   return (
     <div className="flex flex-col justify-center px-24 bg-white p-8">
       <form onSubmit={handleSubmit}>
-        <div className="space-y-12 bg-gray-100 p-6 rounded-lg shadow-md">
-          <div className="border-b border-gray-300 pb-12">
-            <h2 className="text-lg font-semibold text-gray-800">
+        <div className="space-y-12 bg-platinum p-6 rounded-lg shadow-md">
+
+          {/* Tenancy Details */}
+          <div className="border-gray-300">
+            <h2 className="text-lg font-semibold text-gray-800 mb-8">
               Tenancy Details
             </h2>
 
@@ -79,7 +70,7 @@ const TenancyDetails = () => {
                       type="radio"
                       name="paymentFrequency"
                       value="weekly"
-                      
+                      onChange={handleChange}
                     />
                     Weekly
                   </label>
@@ -88,7 +79,7 @@ const TenancyDetails = () => {
                       type="radio"
                       name="paymentFrequency"
                       value="fortnightly"
-                  
+                      onChange={handleChange}
                     />
                     Fortnightly
                   </label>
@@ -97,7 +88,7 @@ const TenancyDetails = () => {
                       type="radio"
                       name="paymentFrequency"
                       value="monthly"
-                
+                      onChange={handleChange}
                     />
                     Monthly
                   </label>
@@ -106,7 +97,8 @@ const TenancyDetails = () => {
             </div>
           </div>
 
-          <h2 className="text-lg font-semibold text-gray-800 mb-6">
+          {/* Tenancy Type */}
+          <h2 className="text-lg text-gray-800">
             Tenancy Type
           </h2>
 
@@ -116,46 +108,38 @@ const TenancyDetails = () => {
                 type="radio"
                 name="tenancyType"
                 value="fixed"
-
+                onChange={handleChange}
               />
               Fixed
-              <div className="w-6 h-6 flex items-center justify-center rounded-full bg-red-500">
-                <FontAwesomeIcon
-                  icon={faQuestion}
-                  className="text-white text-sm"
-                />
-              </div>
+              {/* Add other radio inputs here */}
             </label>
             <label className="flex items-center space-x-8 gap-2">
               <input
                 type="radio"
                 name="tenancyType"
                 value="periodic"
-
+                onChange={handleChange}
               />
               Periodic
-              <div className="w-6 h-6 flex items-center justify-center rounded-full bg-red-500">
-                <FontAwesomeIcon
-                  icon={faQuestion}
-                  className="text-white text-sm"
-                />
-              </div>
+              {/* Add other radio inputs here */}
             </label>
           </div>
 
-          <div className="mt-2 w-1/4">
+          {/* Bond Amount */}
+          <div className="mt-4 w-1/4">
             <input
               type="text"
               name="bond"
               id="bond"
               autoComplete="bond"
-              placeholder="$ Bond"
-              className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+              placeholder="$ Bond Amount"
+              className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
               onChange={handleChange}
             />
           </div>
 
-          <h2 className="text-lg font-semibold text-gray-800 mb-6">
+          {/* Rent Payment Method */}
+          <h2 className="text-lg text-gray-800">
             Rent to be paid at
           </h2>
 
@@ -165,7 +149,7 @@ const TenancyDetails = () => {
                 type="radio"
                 name="landlordAddress"
                 value="Landlord physical address"
-        
+                onChange={handleChange}
               />
               Landlord physical address
             </label>
@@ -174,13 +158,14 @@ const TenancyDetails = () => {
                 type="radio"
                 name="bankTransfer"
                 value="Bank Transfer"
-
+                onChange={handleChange}
               />
               Bank Transfer
             </label>
           </div>
 
-          <h2 className="text-lg font-semibold text-gray-800 mb-6">
+          {/* Bank Details */}
+          <h2 className="text-lg font-semibold text-gray-800">
             Bank Details
           </h2>
 
@@ -191,8 +176,8 @@ const TenancyDetails = () => {
                 name="firstName"
                 id="firstName"
                 autoComplete="given-name"
-                placeholder="First Name"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                placeholder="Account Number"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                 onChange={handleChange}
               />
             </div>
@@ -202,8 +187,8 @@ const TenancyDetails = () => {
                 name="lastName"
                 id="lastName"
                 autoComplete="family-name"
-                placeholder="Last Name"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                placeholder="Account Holder Name"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                 onChange={handleChange}
               />
             </div>
@@ -213,54 +198,34 @@ const TenancyDetails = () => {
             <div>
               <input
                 type="text"
-                name="accountDetails"
-                id="accountDetails"
-                autoComplete="account-details"
-                placeholder="Account Details"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                name="first-name"
+                id="first-name"
+                autoComplete="given-name"
+                placeholder="Bank Name"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                 onChange={handleChange}
               />
             </div>
             <div>
               <input
                 type="text"
-                name="bankName"
-                id="bankName"
-                autoComplete="bank-name"
-                placeholder="Bank Name"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                name="last-name"
+                id="last-name"
+                autoComplete="family-name"
+                placeholder="Branch"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                 onChange={handleChange}
               />
             </div>
           </div>
 
+          {/* Agreement Text */}
           <p>
             The Landlord and the tenant agree that:
-            <br />
-            <br />
-            The tenancy will commence on the day of 20
-            <br />
-            <br />
-            This is a periodic tenancy and may be ended by either party giving
-            notice as required under the Residential Tenancies Act 1986.
-            <br /> See page 4 of this agreement for more information <br />
-            <br />
-            or
-            <br />
-            <br />
-            This tenancy is for a fixed term, ending on the day of. 20
-            <br />
-            <br />
-            DO NOT SIGN THIS AGREEMENT UNLESS YOU UNDERSTAND AND AGREE WITH
-            EVERYTHING IN IT
-            <br />
-            THE LANDLORD AND TENANT SIGN HERE TO SHOW THAT THEY AGREE TO ALL THE
-            TERMS AND CONDITIONS IN THE TENANCY AGREEMENT
-            <br /> AND THAT EACH
-            <br />
-            PARTY HAS READ THE NOTES OF THIS AGREEMENT, READ ONCE AGAIN
+            {/* Add your agreement text here */}
           </p>
 
+          {/* Signature */}
           <h2 className="text-lg font-semibold text-gray-800 mb-6">
             SIGNATURE
           </h2>
@@ -273,7 +238,7 @@ const TenancyDetails = () => {
                 id="signedByTenant"
                 autoComplete="signed-by-tenant"
                 placeholder="Signed by Tenant"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                 onChange={handleChange}
               />
             </div>
@@ -284,7 +249,7 @@ const TenancyDetails = () => {
                 id="dateSignedByTenant"
                 autoComplete="date-signed-by-tenant"
                 placeholder="Date signed by tenant"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                 onChange={handleChange}
               />
             </div>
@@ -298,7 +263,7 @@ const TenancyDetails = () => {
                 id="signedByLandlord"
                 autoComplete="signed-by-landlord"
                 placeholder="Signed by Landlord"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                 onChange={handleChange}
               />
             </div>
@@ -309,25 +274,27 @@ const TenancyDetails = () => {
                 id="dateSignedByLandlord"
                 autoComplete="date-signed-by-landlord"
                 placeholder="Date signed by Landlord"
-                className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                className="border-1 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                 onChange={handleChange}
               />
             </div>
           </div>
 
+          {/* Form Buttons */}
           <div className="flex justify-center gap-8">
-            <button className="btn btn-outline px-16 text-red-600">
+            <button
+              className="border-2 rounded-lg border-red px-16 text-red bg-white shadow-lg py-2  transform hover:scale-110 transition-transform duration-300 ease-in-out"
+              type="button"
+            >
               Save for later
             </button>
 
-            
-            
-            <button 
-            className="btn btn-primary bg-red-600 px-16 text-white">
+            <button
+              className="btn btn-primary bg-red-600 px-16 text-white"
+              type="submit"
+            >
               Submit
             </button>
-
-           
           </div>
         </div>
       </form>
