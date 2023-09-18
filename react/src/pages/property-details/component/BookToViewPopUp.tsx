@@ -17,13 +17,11 @@ function BookToViewPopUp(props: BookToViewPopUpProps) {
   );
 
   const addToPlanner = async () => {
-    // Ensure all required fields are filled
     if (!firstName || !lastName || !phoneNumber || !email || !selectedDate || !selectedTime) {
       alert("All fields are required.");
       return;
     }
 
-    // Prepare the data to send to your backend
     const dataToSend = {
       firstName,
       lastName,
@@ -33,7 +31,6 @@ function BookToViewPopUp(props: BookToViewPopUpProps) {
       selectedTime,
     };
 
-    // You can use the fetch API or your preferred library to send a POST request to your backend
     try {
       const response = await fetch("http://localhost:8080/api/book-to-view", {
         method: "POST",
@@ -44,7 +41,6 @@ function BookToViewPopUp(props: BookToViewPopUpProps) {
       });
 
       if (response.status === 201) {
-        // Booking was successful, you can handle the confirmation here
         setBookingConfirmedVisible(true);
       } else {
         alert("Booking failed. Please try again later.");

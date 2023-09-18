@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
@@ -21,17 +22,16 @@ function SavePropertyPopUp(props: SavePropertyPopUpProps) {
       });
 
       if (response.status === 201) {
-        // Email saved successfully
-        alert("Email sent successfully"); // Show a success alert
+        alert("Email sent successfully");
         onClose();
       } else {
         const data = await response.json();
         console.error('Error saving email:', data.message);
-        alert(`Error: ${data.message}`); // Show an error alert
+        alert(`Error: ${data.message}`); 
       }
     } catch (error) {
       console.error('Error saving email:', error);
-      alert("An error occurred"); // Show a generic error alert
+      alert("An error occurred");
     }
   };
 

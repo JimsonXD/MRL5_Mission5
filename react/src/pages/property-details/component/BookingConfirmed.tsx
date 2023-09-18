@@ -11,18 +11,15 @@ interface Booking {
   lastName: string;
   selectedDate: string;
   selectedTime: string;
-  // Add other properties as needed
 }
 
 const BookingConfirmed = (props: BookingConfirmedProps) => {
   const [bookings, setBookings] = useState<Booking[]>([]);
 
-  // Use the useEffect hook to fetch data when the component mounts
   useEffect(() => {
-    // Define a function to fetch bookings
     const fetchBookings = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/bookings"); // Assumes the frontend and backend are served from the same domain
+        const response = await fetch("http://localhost:8080/api/bookings"); 
 
         if (response.ok) {
           const data = await response.json();
@@ -35,7 +32,6 @@ const BookingConfirmed = (props: BookingConfirmedProps) => {
       }
     };
 
-    // Call the fetchBookings function to load bookings when the component mounts
     fetchBookings();
   }, []);
 
@@ -54,14 +50,10 @@ const BookingConfirmed = (props: BookingConfirmedProps) => {
         <div className="bg-white opacity-70 my-12 rounded-md p-12 text-center text-black">
           <h1>Thank you!!!</h1>
           <h2 className="text-red">Booking Confirmed</h2>
-          {/* <hr></hr><div className="img p-10 justify-center ml-25 mt-4"></div> */}
-
           <br />
 
-          {/* Render your bookings here */}
           {bookings.map((booking) => (
             <div key={booking._id}>
-              {/* Display individual booking data */}
               <h3>
                 {booking.firstName} {booking.lastName}
               </h3>

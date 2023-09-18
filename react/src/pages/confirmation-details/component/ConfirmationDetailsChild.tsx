@@ -6,7 +6,6 @@ import "./styles.css";
 import { Link } from "react-router-dom";
 import ViewMore from "../../property-details/component/ViewMore";
 
-
 const ConfirmationDetailsChild = () => {
   return (
     <div className="bg-white py-12">
@@ -14,12 +13,7 @@ const ConfirmationDetailsChild = () => {
         <div className="bg-white opacity-70 my-12 rounded-md p-24 text-center text-black">
           <h1>Thank you!!!</h1>
           <p>
-
-<div className="img p-10 ml-16"></div>
-
-
-            {" "}
-            You've completed the
+            <div className="img p-10 ml-16"></div> You've completed the
             <br /> tenancy agreement
           </p>
           <br />
@@ -29,15 +23,11 @@ const ConfirmationDetailsChild = () => {
             Our team will be in <br /> touch soon!
           </p>
 
-
           <Link to="/">
-          <button className="btn-secondary bg-red btn-md 0 px-4 mt-6 text-lg rounded-md">
-            Back to Home
-          </button>
-</Link>
-
-
-
+            <button className="btn-secondary bg-red btn-md 0 px-4 mt-6 text-lg rounded-md">
+              Back to Home
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -58,7 +48,6 @@ const ConfirmationDetailsChild = () => {
           }}
         />
       </div>
-
     </div>
   );
 };
