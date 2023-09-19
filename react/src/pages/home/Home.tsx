@@ -4,10 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CarouselHomePage from '../home/CarouselHomePage';
 import Footer from "../../commonComponents/Footer";
 import HomePagePicture from '../../assets/HomePage.png';
+import QueenCityLaw from '../../assets/QueenCityLaw.png'
 import BodyCorporateHomepage from '../../assets/BodyCorporateAdministration.png'
-import BookViewingTimespopups from '../../pages/popups/BookViewingTime'
-import EnquireNowpopups from '../../pages/popups/EnquireNowPopup'
 import styles from '../../pages/home/Home.module.css';
+import WestpacAwards from '../../assets/WestpacAwards.png'
+import ReaAwards from '../../assets/ReaAwards.png'
 import { Link } from "react-router-dom";
 
 
@@ -26,15 +27,7 @@ const Home = () => {
       <Navbar />
       <div>
         {/* Search bar */}
-        <div className="relative mt-2 rounded-md shadow-sm">
-          <input
-            type="text"
-            name="price"
-            id="price"
-            className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            placeholder="Type an Address, Suburb or City"
-          />
-        </div>
+        
 
         {/* Picture */}
         <div className={styles.flexContainer1}>
@@ -45,7 +38,7 @@ const Home = () => {
        
         style={{
           maxWidth: '100%',
-          height: 'auto',
+          height: '520px',
           display: 'block',
         }}
         alt="Pic1"
@@ -54,8 +47,9 @@ const Home = () => {
     <div className={styles.flexItemrightitle}>
       <br></br>
       <br></br>
-      <p>Property Management Auckland</p>
-      <p>
+      <p className={styles.redText}>Property Management Auckland </p>
+
+      <p className={styles.maintext}>
         Metro NZ is one of the top Auckland Property Management companies. All
         of our staff are property investors who have expert knowledge of the
         property market and your best interest in mind at all times. Check out
@@ -83,33 +77,63 @@ const Home = () => {
         <div className={styles.SecondSlogan}>Helping Clients To Achieve Harmony Through Our Expertise and Skills</div>
         {/* flexbox */}
         <div className={styles.flexContainer}>
-      <div className={styles.flexItemleft}>Property Management<img
-      src={BodyCorporateHomepage} alt="pic1"
-    /></div>
-      <div className={styles.flexItemright}>Body Corporate Administration<img
-      src={BodyCorporateHomepage} alt="pic1"
-      
-     
-    /></div>
-      <div className={styles.flexItemright}>Building Management<img
-      src={BodyCorporateHomepage} alt="pic1"
-    /></div>
-      <div className={styles.flexItemright}>Decluttering Management<img
-      src={BodyCorporateHomepage} alt="pic1"
-    /></div>
-      <div className={styles.flexItemright}>Free Property Appraisals<img
-      src={BodyCorporateHomepage} alt="pic1"
-    /></div>
-      <div className={styles.flexItemright}>Renovation Property Management<img
-      src={BodyCorporateHomepage} alt="pic1"
-    /></div>
-      <div className={styles.flexItemright}>Investment Properties<img
-      src={BodyCorporateHomepage} alt="pic1"
-    /></div>
-      <div className={styles.flexItemright}>Rental Properties<img
-      src={BodyCorporateHomepage} alt="pic1"
-    /></div>
+        <div className={styles.flexItemright}>
+  <div className={styles.imageContainer}>
+    <img src={BodyCorporateHomepage} alt="pic1" className={styles.image} />
+    <div className={styles.overlayText}>Property Management</div>
+  </div>
+</div>
+     <div className={styles.flexItemright}>
+  <div className={styles.imageContainer}>
+    <img src={BodyCorporateHomepage} alt="pic1" className={styles.image} />
+    <div className={styles.overlayText}>Body Corporate Administration</div>
+  </div>
+</div>
+<div className={styles.flexItemright}>
+  <div className={styles.imageContainer}>
+    <img src={BodyCorporateHomepage} alt="pic1" className={styles.image} />
+    <div className={styles.overlayText}>Building Management</div>
+  </div>
+</div>
+<div className={styles.flexItemright}>
+  <div className={styles.imageContainer}>
+    <img src={BodyCorporateHomepage} alt="pic1" className={styles.image} />
+    <div className={styles.overlayText}>Decluttering Management</div>
+  </div>
+</div>
+<div className={styles.flexItemright}>
+  <div className={styles.imageContainer}>
+    <img src={BodyCorporateHomepage} alt="pic1" className={styles.image} />
+    <div className={styles.overlayText}>Free Property Appraisals</div>
+  </div>
+</div>
+      <div className={styles.flexItemright}>
+  <div className={styles.imageContainer}>
+    <img src={BodyCorporateHomepage} alt="pic1" className={styles.image} />
+    <div className={styles.overlayText}>Renovation Property Management</div>
+  </div>
+</div>
+
+    
+      <div className={styles.flexItemright}>
+  <div className={styles.imageContainer}>
+    <img src={BodyCorporateHomepage} alt="pic1" className={styles.image} />
+    <div className={styles.overlayText}>Investment Properties</div>
+  </div>
+</div>
+
+
+
+
+
+<div className={styles.flexItemright}>
+  <div className={styles.imageContainer}>
+    <img src={BodyCorporateHomepage} alt="pic1" className={styles.image} />
+    <div className={styles.overlayText}>Rental Properties</div>
+  </div>
+</div>
     </div>
+   
     <div className={styles.buttoncontainer}>
         <button className={styles.redbutton}>Property Owners</button>
         <button className={styles.redbutton}>Rental Listings</button>
@@ -170,10 +194,10 @@ const Home = () => {
         </h2>
         <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
           <img
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg"
+            
+            src={QueenCityLaw}
             alt="Transistor"
-            width={158}
+            width={500}
             height={48}
           />
           <img
@@ -184,10 +208,10 @@ const Home = () => {
             height={48}
           />
           <img
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg"
+           
+            src={WestpacAwards}
             alt="Tuple"
-            width={158}
+            width={1000}
             height={48}
           />
           <img
@@ -198,18 +222,16 @@ const Home = () => {
             height={48}
           />
           <img
-            className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-            src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg"
+          
+            src={ReaAwards}
             alt="Statamic"
-            width={158}
+            width={600}
             height={48}
           />
         </div>
       </div>
     </div>
 
-    <BookViewingTimespopups/>
-    <EnquireNowpopups/>
       </div>
       <Footer />
     </div>
