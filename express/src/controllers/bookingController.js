@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Booking = require('../models/bookingModel');
+const mongoose = require("mongoose");
+const Booking = require("../models/bookingModel");
 
 exports.bookToView = async (req, res) => {
   try {
@@ -20,7 +20,7 @@ exports.bookToView = async (req, res) => {
       !selectedDate ||
       !selectedTime
     ) {
-      return res.status(400).json({ message: 'All fields are required' });
+      return res.status(400).json({ message: "All fields are required" });
     }
 
     const currentTime = Date.now();
@@ -37,22 +37,19 @@ exports.bookToView = async (req, res) => {
 
     await newBooking.save();
 
-    return res.status(201).json({ message: 'Booking saved successfully' });
+    return res.status(201).json({ message: "Booking saved successfully" });
   } catch (error) {
-    console.error('Error saving booking to MongoDB:', error);
-    return res.status(500).json({ message: 'Error saving booking to MongoDB' });
+    console.error("Error saving booking to MongoDB:", error);
+    return res.status(500).json({ message: "Error saving booking to MongoDB" });
   }
 };
 
 exports.getBookings = async (req, res) => {
   try {
-   
-    const bookings = await Booking.find({});
-
- 
-    res.status(200).json(bookings);
+    const bookings = await Booking.find().sort({ timestamp: -1 });
+    res.json(bookings);
   } catch (error) {
-    console.error('Error retrieving bookings:', error);
-    res.status(500).json({ message: 'Error retrieving bookings' });
+    console.error("Error fetching bookings:", error);
+    res.status(500).json({ error: "Failed to fetch bookings" });
   }
 };

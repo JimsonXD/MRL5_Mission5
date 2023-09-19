@@ -15,3 +15,10 @@ const propertySchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Property', propertySchema);
+
+
+
+  
+
+
+

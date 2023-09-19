@@ -24,7 +24,7 @@ services:
     volumes: 
       - database:/data/db
     ports:
-      - 27017:27017
+      - 27018:27017
     networks:
       - team3network
 

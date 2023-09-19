@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLocationDot,
   faDownload,
-  faShare,
   faDollarSign,
+  faShareNodes,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
@@ -15,7 +15,7 @@ interface PropertyListingProps {
 }
 
 const PropertyIcon: React.FC<{ icon: any }> = ({ icon }) => (
-  <FontAwesomeIcon icon={icon} size="lg" className="text-red" />
+  <FontAwesomeIcon icon={icon} size="lg" className="text-red100" />
 );
 
 const PropertyListing: React.FC<PropertyListingProps> = ({
@@ -43,7 +43,7 @@ const PropertyListing: React.FC<PropertyListingProps> = ({
           <PropertyIcon icon={faDownload} /> Download
         </div>
         <div className="flex-1">
-          <PropertyIcon icon={faShare} /> Share
+          <PropertyIcon icon={faShareNodes} /> Share
         </div>
       </div>
     </div>
@@ -51,10 +51,10 @@ const PropertyListing: React.FC<PropertyListingProps> = ({
 );
 
 const MyTenancyApplicationChild = () => (
-  <div className="bg-white pb-28 text-black">
-    <div className="flex flex-col justify-center bg-white pt-8 mx-32">
+  <div className="pb-28 text-black">
+    <div className="flex flex-col justify-center pt-8 mx-32">
       <h3>My Tenancy Application</h3>
-      <h5 className="pt-12 pb-12 text-red">
+      <h5 className="pt-12 pb-12 text-red100">
         New Application sent by property manager
       </h5>
 
@@ -66,7 +66,7 @@ const MyTenancyApplicationChild = () => (
         />
       </Link>
 
-      <h5 className="pt-20 pb-12 text-red">Previous Tenancy Applications History</h5>
+      <h5 className="pt-20 pb-12 text-red100">Previous Tenancy Applications History</h5>
       <div className="mb-8">
         <PropertyListing
           imageUrl="https://www.mojohomes.com.au/sites/default/files/styles/scale_1180x465/public/collaroy-double-storey-motion-house-design-grande-1770x698px.jpg?itok=EjiFt-z6"

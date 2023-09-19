@@ -19,20 +19,20 @@ const Navbar: React.FC = () => {
             <img src={Metrologo} alt="Metro Logo" className="w-30 h-12 m-2" />
           </Link>
 
-          <ul className="hidden lg:flex space-x-8">
-            <li>
+          <ul className="hidden lg:flex space-x-8 ">
+          <li className="hover:border-b-4 hover:border-red300">
               <Link
                 to="/"
-                className="no-underline hover:bg-platinum hover:bg-opacity-50 py-2 rounded hover:text-darkgrey text-silver"
+                className="no-underline rounded hover:text-red300 text-black "
               >
                 Home
               </Link>
             </li>
 
-            <li className="relative">
+            <li className="relative hover:border-b-4 hover:border-red300">
               <Link
                 to="#"
-                className="no-underline hover:bg-platinum hover:bg-opacity-50 py-2 rounded hover:text-darkgrey text-silver"
+                className="no-underline py-2 rounded hover:text-red300 text-black"
               >
                 Services
               </Link>
@@ -41,7 +41,6 @@ const Navbar: React.FC = () => {
                 className="w-4 h-4 inline-block ml-2 -mt-1 cursor-pointer"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
-                // fill="currentColor"
               >
                 <path
                   fillRule="evenodd"
@@ -49,13 +48,12 @@ const Navbar: React.FC = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              {/* Dropdown menu */}
               {isDropdownOpen && (
-                <ul className="absolute py-4 bg-silver bg-opacity-25 border rounded shadow-lg flex flex-col justify-center text-align-center ">
+                <ul className="absolute py-4 border rounded shadow-lg flex flex-col justify-center text-align-center ">
                   <li>
                     <Link
                       to="/"
-                      className="block px-4 py-2 hover:bg-ruby hover:text-white text-black no-underline mr-8"
+                      className="block px-4 py-2 hover:bg-red300 hover:text-white text-black no-underline mr-8"
                     >
                       Page1
                     </Link>
@@ -63,7 +61,7 @@ const Navbar: React.FC = () => {
                   <li>
                     <Link
                       to="/rental-property-search"
-                      className="block px-4 py-2  hover:bg-ruby hover:text-white  text-black no-underline mr-8"
+                      className="block px-4 py-2  hover:bg-red300 hover:text-white  text-black no-underline mr-8"
                     >
                       Page2
                     </Link>
@@ -71,7 +69,7 @@ const Navbar: React.FC = () => {
                   <li>
                     <Link
                       to="/property-details"
-                      className="block px-4 py-2  hover:bg-ruby hover:text-white  text-black no-underline mr-8"
+                      className="block px-4 py-2  hover:bg-red300 hover:text-white  text-black no-underline mr-8"
                     >
                       Page3
                     </Link>
@@ -79,7 +77,7 @@ const Navbar: React.FC = () => {
                   <li>
                     <Link
                       to="/my-tenancy-application"
-                      className="block px-4 py-2 hover:bg-ruby hover:text-white  text-black no-underline mr-8"
+                      className="block px-4 py-2 hover:bg-red300 hover:text-white  text-black no-underline mr-8"
                     >
                       Page4
                     </Link>
@@ -87,7 +85,7 @@ const Navbar: React.FC = () => {
                   <li>
                     <Link
                       to="/application"
-                      className="block px-4 py-2 hover:bg-ruby hover:text-white  text-black no-underline mr-8"
+                      className="block px-4 py-2 hover:bg-red300 hover:text-white  text-black no-underline mr-8"
                     >
                       Page5
                     </Link>
@@ -95,7 +93,7 @@ const Navbar: React.FC = () => {
                   <li>
                     <Link
                       to="/confirmation-details"
-                      className="block px-4 py-2 hover:bg-ruby hover:text-white  text-black no-underline mr-8"
+                      className="block px-4 py-2 hover:bg-red300 hover:text-white  text-black no-underline mr-8"
                     >
                       Page6
                     </Link>
@@ -104,34 +102,34 @@ const Navbar: React.FC = () => {
               )}
             </li>
 
-            <li>
+            <li className="hover:border-b-4 hover:border-red300">
               <Link
                 to="/news"
-                className="no-underline hover:bg-platinum hover:bg-opacity-50 py-2 rounded hover:text-darkgrey text-silver"
+                className="no-underline hover:bg-red hover:bg-opacity-50 py-2 rounded hover:text-red300 text-black"
               >
                 News
               </Link>
             </li>
-            <li>
+            <li className="hover:border-b-4 hover:border-red300">
               <Link
                 to="/about-us"
-                className="no-underline hover:bg-platinum hover:bg-opacity-50 py-2 rounded hover:text-darkgrey text-silver"
+                className="no-underline hover:bg-red hover:bg-opacity-50 py-2 rounded hover:text-red200 text-black"
               >
                 About Us
               </Link>
             </li>
-            <li>
+            <li className="hover:border-b-4 hover:border-red300">
               <Link
                 to="/contact"
-                className="no-underline hover:bg-platinum hover:bg-opacity-50 py-2 rounded hover:text-darkgrey text-silver"
+                className="no-underline hover:bg-red hover:bg-opacity-50 py-2 rounded hover:text-red200 text-black"
               >
                 Contact
               </Link>
             </li>
-            <li>
+            <li className="hover:border-b-4 hover:border-red300">
               <Link
                 to="/sign-in"
-                className="no-underline hover:bg-platinum hover:bg-opacity-50 py-2 rounded hover:text-darkgrey text-silver"
+                className="no-underline hover:bg-red hover:bg-opacity-50 py-2 rounded hover:text-red200 text-black"
               >
                 Sign In
               </Link>

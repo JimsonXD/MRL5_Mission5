@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const TenancyDetails = () => {
   const [formData, setFormData] = useState({
@@ -19,22 +19,23 @@ const TenancyDetails = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/api/submittenancydetails", formData);
+      await axios.post(
+        "http://localhost:8080/api/submittenancydetails",
+        formData
+      );
       alert("Form data submitted successfully");
-      
-      navigate('/confirmation-details'); 
+
+      navigate("/confirmation-details");
     } catch (error) {
       console.error("An error occurred while submitting the form:", error);
       alert("An error occurred");
     }
   };
-  
 
   return (
     <div className="flex flex-col justify-center px-24 bg-white p-8">
       <form onSubmit={handleSubmit}>
         <div className="space-y-12 bg-platinum p-6 rounded-lg shadow-md">
-
           <div className="border-gray-300">
             <h2 className="text-lg font-semibold text-gray-800 mb-8">
               Tenancy Details
@@ -48,7 +49,7 @@ const TenancyDetails = () => {
                   id="addressOfTenancy"
                   autoComplete="address-of-tenancy"
                   placeholder="Address of Tenancy"
-                  className="border-2 bg-white block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
+                  className="border-2 block w-full rounded-md border-gray-300 py-2 px-3 text-gray-800 shadow-sm placeholder-gray-400 focus:ring-indigo-600 focus:border-indigo-600 sm:text-sm"
                   onChange={handleChange}
                 />
               </div>
@@ -97,29 +98,37 @@ const TenancyDetails = () => {
               </div>
             </div>
           </div>
- 
-          <h2 className="text-lg text-gray-800">
-            Tenancy Type
-          </h2>
 
-          <div className="flex gap-32">
-            <label className="flex items-center space-x-8 gap-2">
+          <h2 className="text-lg text-gray-800">Tenancy Type</h2>
+
+          <div className="flex space-x-12 gap-12">
+            <label className="flex items-center gap-2">
               <input
                 type="radio"
-                name="tenancyType"
-                value="fixed"
+                name="landlordAddress"
+                value="Landlord physical address"
                 onChange={handleChange}
               />
               Fixed
+              <span className="ml-4">
+                <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-red100 text-white">
+                  ?
+                </span>
+              </span>
             </label>
-            <label className="flex items-center space-x-8 gap-2">
+            <label className="flex items-center gap-2">
               <input
                 type="radio"
-                name="tenancyType"
-                value="periodic"
+                name="bankTransfer"
+                value="Bank Transfer"
                 onChange={handleChange}
               />
               Periodic
+              <span className="ml-4">
+                <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-red100 text-white">
+                  ?
+                </span>
+              </span>
             </label>
           </div>
 
@@ -135,9 +144,7 @@ const TenancyDetails = () => {
             />
           </div>
 
-          <h2 className="text-lg text-gray-800">
-            Rent to be paid at
-          </h2>
+          <h2 className="text-lg text-gray-800">Rent to be paid at</h2>
 
           <div className="flex space-x-12 gap-12">
             <label className="flex items-center gap-2">
@@ -160,9 +167,7 @@ const TenancyDetails = () => {
             </label>
           </div>
 
-          <h2 className="text-lg font-semibold text-gray-800">
-            Bank Details
-          </h2>
+          <h2 className="text-lg font-semibold text-gray-800">Bank Details</h2>
 
           <div className="grid grid-cols-2 gap-4">
             <div>
@@ -214,8 +219,32 @@ const TenancyDetails = () => {
             </div>
           </div>
 
+          <p>The Landlord and the tenant agree that:</p>
+
+          <p>The tenancy will commence on the _________ day of _________ 20.</p>
+
           <p>
-            The Landlord and the tenant agree that:
+            This is a periodic tenancy and may be ended by either party giving
+            notice as required under the Residential Tenancies Act 1986. See
+            page 4 of this agreement for more information.
+          </p>
+
+          <p>or</p>
+
+          <p>
+            This tenancy is for a fixed term, ending on the _________ day of
+            _________ 20__.
+          </p>
+
+          <p>
+            DO NOT SIGN THIS AGREEMENT UNLESS YOU UNDERSTAND AND AGREE WITH
+            EVERYTHING IN IT.
+          </p>
+
+          <p>
+            THE LANDLORD AND TENANT SIGN HERE TO SHOW THAT THEY AGREE TO ALL THE
+            TERMS AND CONDITIONS IN THE TENANCY AGREEMENT AND THAT EACH PARTY
+            HAS READ THE NOTES OF THIS AGREEMENT, READ ONCE AGAIN.
           </p>
 
           <h2 className="text-lg font-semibold text-gray-800 mb-6">
@@ -274,14 +303,14 @@ const TenancyDetails = () => {
 
           <div className="flex justify-center gap-8">
             <button
-              className="border-2 rounded-lg border-red px-16 text-red bg-white shadow-lg py-2  transform hover:scale-110 transition-transform duration-300 ease-in-out"
+              className="border-2 rounded-lg border-red100 px-16 text-red100 horver:text-red300 hover:border-red300 bg-white shadow-lg py-2 hover:shadow-lg "
               type="button"
             >
               Save for later
             </button>
 
             <button
-              className="btn btn-primary bg-red-600 px-16 text-white"
+              className="bg-red100 hover:bg-red300 rounded-lg uppercase px-16 text-white shadow-lg"
               type="submit"
             >
               Submit
