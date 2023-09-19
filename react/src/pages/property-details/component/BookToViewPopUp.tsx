@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from "react";
 import BookingConfirmed from "./BookingConfirmed";
 
@@ -5,22 +6,44 @@ interface BookToViewPopUpProps {
   onClose: () => void;
 }
 
-function BookToViewPopUp(props: BookToViewPopUpProps) {
-  const [firstName, setFirstName] = useState<string>("");
-  const [lastName, setLastName] = useState<string>("");
-  const [phoneNumber, setPhoneNumber] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [selectedDate1, setSelectedDate1] = useState<string>("");
-  const [selectedTime1, setSelectedTime1] = useState<string>("");
-  const [selectedDate2, setSelectedDate2] = useState<string>("");
-  const [selectedTime2, setSelectedTime2] = useState<string>("");
-  const [selectedDate3, setSelectedDate3] = useState<string>("");
-  const [selectedTime3, setSelectedTime3] = useState<string>("");
-  const [bookingConfirmedVisible, setBookingConfirmedVisible] = useState<boolean>(
-    false
-  );
+interface DateTime {
+  date: string;
+  time: string;
+}
 
-  const addToPlanner = async (date: string, time: string) => {
+function BookToViewPopUp(props: BookToViewPopUpProps) {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    email: "",
+    dateTimes: [
+      { date: "", time: "" },
+      { date: "", time: "" },
+      { date: "", time: "" },
+    ],
+  });
+
+  const [bookingConfirmedVisible, setBookingConfirmedVisible] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
+    const { name, value } = e.target;
+    if (name === "date" || name === "time") {
+      const dateTimes = [...formData.dateTimes];
+      dateTimes[index][name] = value;
+      setFormData({ ...formData, dateTimes });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const addToPlanner = async (index: number) => {
+    const { firstName, lastName, phoneNumber, email, dateTimes } = formData;
+    const { date, time } = dateTimes[index];
+
     if (!firstName || !lastName || !phoneNumber || !email || !date || !time) {
       alert("All fields are required.");
       return;
@@ -56,7 +79,7 @@ function BookToViewPopUp(props: BookToViewPopUpProps) {
   };
 
   const handleCancelButtonClick = () => {
-    props.onClose(); 
+    props.onClose();
   };
 
   return (
@@ -64,8 +87,8 @@ function BookToViewPopUp(props: BookToViewPopUpProps) {
       {bookingConfirmedVisible ? (
         <BookingConfirmed onClose={() => setBookingConfirmedVisible(false)} />
       ) : (
-        <div className="bg-primary w-full max-w-screen-lg">
-          <form className="w-full bg-platinum p-8">
+        <div className="w-2/3 max-w-screen-lg p-8 rounded-lg shadow-lg pb-24 pt-24 bg-gainsboro hover:shadow-2xl transition-transform duration-300 transform hover:scale-105">
+          <form className="w-full p-8">
             <div>
               <div className="text-center pb-4">
                 <h4>Book Viewing Time</h4>
@@ -73,117 +96,91 @@ function BookToViewPopUp(props: BookToViewPopUpProps) {
               <div className="flex flex-wrap -mx-4 mb-6">
                 <div className="w-full md:w-1/2 px-4 mb-6 md:mb-0">
                   <input
-                    className="appearance-none block w-full bg-white text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    id="grid-first-name"
+                    className="appearance-none block w-full bg-white border-2 shadow-md rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-red300"
                     type="text"
+                    name="firstName"
                     placeholder="First Name"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
+                    value={formData.firstName}
+                    onChange={(e) => handleChange(e, -1)}
+                    required
                   />
                 </div>
                 <div className="w-full md:w-1/2 px-4">
                   <input
-                    className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-last-name"
+                    className="appearance-none block w-full bg-white border-2 shadow-md rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-red300"
                     type="text"
+                    name="lastName"
                     placeholder="Last Name"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
+                    value={formData.lastName}
+                    onChange={(e) => handleChange(e, -1)}
+                    required
                   />
                 </div>
-              </div>
-              <div className="flex flex-wrap -mx-4 mb-6">
                 <div className="w-full md:w-1/2 px-4 mb-6 md:mb-0">
                   <input
-                    className="appearance-none block w-full bg-white text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    id="grid-phone-number"
+                    className="appearance-none block w-full bg-white border-2 shadow-md rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-red300"
                     type="text"
+                    name="phoneNumber"
                     placeholder="Phone Number"
-                    value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    value={formData.phoneNumber}
+                    onChange={(e) => handleChange(e, -1)}
+                    required
                   />
                 </div>
                 <div className="w-full md:w-1/2 px-4">
                   <input
-                    className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-email"
+                    className="appearance-none block w-full bg-white border-2 shadow-md rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-red300"
                     type="text"
+                    name="email"
                     placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={formData.email}
+                    onChange={(e) => handleChange(e, -1)}
+                    required
                   />
                 </div>
               </div>
             </div>
-            <div className="flex justify-between px-3 mb-2 popup-content">
-              <label htmlFor="date1">Date:</label>
-              <input
-                type="date"
-                id="date1"
-                value={selectedDate1}
-                onChange={(e) => setSelectedDate1(e.target.value)}
-              />
-              <br />
-              <label htmlFor="time1">Time:</label>
-              <input
-                type="time"
-                id="time1"
-                value={selectedTime1}
-                onChange={(e) => setSelectedTime1(e.target.value)}
-              />
-              <br />
-              <button onClick={() => addToPlanner(selectedDate1, selectedTime1)}>Add to Planner</button>
-            </div>
-            <div className="flex justify-between px-3 mb-2 popup-content">
-              <label htmlFor="date2">Date:</label>
-              <input
-                type="date"
-                id="date2"
-                value={selectedDate2}
-                onChange={(e) => setSelectedDate2(e.target.value)}
-              />
-              <br />
-              <label htmlFor="time2">Time:</label>
-              <input
-                type="time"
-                id="time2"
-                value={selectedTime2}
-                onChange={(e) => setSelectedTime2(e.target.value)}
-              />
-              <br />
-              <button onClick={() => addToPlanner(selectedDate2, selectedTime2)}>Add to Planner</button>
-            </div>
-            <div className="flex justify-between px-3 mb-2 popup-content">
-              <label htmlFor="date3">Date:</label>
-              <input
-                type="date"
-                id="date3"
-                value={selectedDate3}
-                onChange={(e) => setSelectedDate3(e.target.value)}
-              />
-              <br />
-              <label htmlFor="time3">Time:</label>
-              <input
-                type="time"
-                id="time3"
-                value={selectedTime3}
-                onChange={(e) => setSelectedTime3(e.target.value)}
-              />
-              <br />
-              <button onClick={() => addToPlanner(selectedDate3, selectedTime3)}>Add to Planner</button>
-            </div>
+
+            {formData.dateTimes.map((dateTime, index) => (
+              <div
+                key={index}
+                className="flex justify-between px-3 mb-2 popup-content"
+              >
+                <label htmlFor={`date${index}`}>Date:</label>
+                <input
+                  type="date"
+                  id={`date${index}`}
+                  name="date"
+                  value={dateTime.date}
+                  onChange={(e) => handleChange(e, index)}
+                />
+                <br />
+                <label htmlFor={`time${index}`}>Time:</label>
+                <input
+                  type="time"
+                  id={`time${index}`}
+                  name="time"
+                  value={dateTime.time}
+                  onChange={(e) => handleChange(e, index)}
+                />
+                <br />
+                <button onClick={() => addToPlanner(index)}>
+                  Add to Planner
+                </button>
+              </div>
+            ))}
             <div className="md:flex md:items-center py-4 flex justify-center gap-4">
               <button
-                className="shadow btn-outline border-1 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-red bg-white font-bold py-2 px-12 rounded"
+                className="shadow btn-outline border-1 hover:text-red300 hover:border-red300  text-red100 hover:text-300 bg-white font-bold py-2 px-12 rounded"
                 type="button"
                 onClick={handleCancelButtonClick}
               >
                 Cancel
               </button>
               <button
-                className="shadow bg-red hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-12 rounded"
+                className="shadow bg-red100 hover:bg-red300 text-white font-bold py-2 px-12 rounded"
                 type="button"
-                onClick={() => addToPlanner(selectedDate1, selectedTime1)}
+                onClick={() => addToPlanner(0)}
               >
                 Book
               </button>

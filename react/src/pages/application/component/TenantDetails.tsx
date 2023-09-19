@@ -120,7 +120,7 @@ const TenantDetails = () => {
                     htmlFor="file-upload"
                     className="py-2 px-12 w-full text-gray border-1 relative cursor-pointer rounded-md bg-white font-semibold text-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                   >
-                    <span><FontAwesomeIcon icon={faPlus} className="text-red"/> Upload PDF</span>
+                    <span><FontAwesomeIcon icon={faPlus} className="text-red100"/> Upload PDF</span>
                     <input
                       type="file"
                       name="passport-file"
@@ -149,7 +149,7 @@ const TenantDetails = () => {
                     htmlFor="file-upload"
                     className="py-2 px-12 w-full border-1 relative cursor-pointer rounded-md bg-white font-semibold text-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                   >
-                 <span><FontAwesomeIcon icon={faPlus} className="text-red"/> Upload PDF</span>
+                 <span><FontAwesomeIcon icon={faPlus} className="text-red100"/> Upload PDF</span>
                     <input
                       type="file"
                       name="passport-file"
@@ -178,7 +178,7 @@ const TenantDetails = () => {
                     htmlFor="file-upload"
                     className="py-2 px-12 w-full border-1 relative cursor-pointer rounded-md bg-white font-semibold text-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                   >
-                      <span><FontAwesomeIcon icon={faPlus} className="text-red"/> Upload PDF</span>
+                      <span><FontAwesomeIcon icon={faPlus} className="text-red100"/> Upload PDF</span>
                     <input
                       type="file"
                       name="passport-file"
@@ -255,8 +255,8 @@ const TenantDetails = () => {
               </div>
             </div>
 
-            <button className="btn-outline px-12 text-ruby border-2 rounded-lg py-2 bg-white uppercase text-sm hover:shadow-lg shadow-lg">
-            <FontAwesomeIcon icon={faPlus} className="text-red text-sm"/> add more tenants
+            <button className="btn-outline px-12 text-red100 border-2 hover:border-red300 rounded-lg py-2 bg-white uppercase text-sm hover:text-red300 hover:shadow-lg shadow-lg">
+            <FontAwesomeIcon icon={faPlus} className="text-red100 text-sm  "/> add more tenants
             </button>
           </div>
         </div>

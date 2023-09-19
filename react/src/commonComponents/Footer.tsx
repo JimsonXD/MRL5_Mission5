@@ -70,7 +70,7 @@ const Footer = () => {
                   <FontAwesomeIcon
                     icon={faFacebookF}
                     size="sm"
-                    className="text-red group-hover:text-white transition-colors duration-700"
+                    className="text-red100 group-hover:text-white transition-colors duration-700"
                   />
                 </svg>
               </div>
@@ -80,7 +80,7 @@ const Footer = () => {
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-20 w-10 text-red group-hover:text-white transition-colors duration-700"
+                  className="h-20 w-10 text-red100 group-hover:text-white transition-colors duration-700"
                   fill="none"
                   viewBox="0 0 40 15"
                   stroke="currentColor"
@@ -97,7 +97,7 @@ const Footer = () => {
                   <FontAwesomeIcon
                     icon={faSquareInstagram}
                     size="sm"
-                    className="text-red group-hover:text-white transition-colors duration-700"
+                    className="text-red100 group-hover:text-white transition-colors duration-700"
                   />
                 </svg>
               </div>
@@ -107,7 +107,7 @@ const Footer = () => {
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-20 w-10 text-red group-hover:text-white transition-colors duration-700"
+                  className="h-20 w-10 text-red100 group-hover:text-white transition-colors duration-700"
                   fill="none"
                   viewBox="0 0 40 15"
                   stroke="currentColor"
@@ -124,7 +124,7 @@ const Footer = () => {
                   <FontAwesomeIcon
                     icon={faLinkedinIn}
                     size="sm"
-                    className="text-red group-hover:text-white transition-colors duration-700"
+                    className="text-red100 group-hover:text-white transition-colors duration-700"
                   />
                 </svg>
               </div>
@@ -134,7 +134,7 @@ const Footer = () => {
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-20 w-10 text-turnersred group-hover:text-white transition-colors duration-700"
+                  className="h-20 w-10 text-turnersred100 group-hover:text-white transition-colors duration-700"
                   fill="none"
                   viewBox="0 0 40 15"
                   stroke="currentColor"
@@ -151,7 +151,7 @@ const Footer = () => {
                   <FontAwesomeIcon
                     icon={faTwitter}
                     size="sm"
-                    className="text-red group-hover:text-white transition-colors duration-700"
+                    className="text-red100 group-hover:text-white transition-colors duration-700"
                   />
                 </svg>
               </div>

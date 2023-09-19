@@ -39,7 +39,7 @@ const ConfirmationDetailsChild = () => {
           </p>
 
           <Link to="/">
-            <button className="btn-secondary bg-red btn-md 0 px-4 mt-6 text-lg rounded-md">
+            <button className="bg-red100 btn-md text-white hover:bg-red300 px-4 mt-6 text-lg rounded-md">
               Back to Home
             </button>
           </Link>
