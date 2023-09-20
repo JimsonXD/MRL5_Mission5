@@ -1,12 +1,12 @@
 import React from "react";
 import Navbar from "../../commonComponents/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CarouselHomePage from '../home/CarouselHomePage';
+import CarouselHomePage from './CarouselHomePage';
 import Footer from "../../commonComponents/Footer";
 import HomePagePicture from '../../assets/HomePage.png';
 import QueenCityLaw from '../../assets/QueenCityLaw.png'
 import BodyCorporateHomepage from '../../assets/BodyCorporateAdministration.png'
-import styles from '../../pages/home/Home.module.css';
+import styles from './Home.module.css';
 import WestpacAwards from '../../assets/WestpacAwards.png'
 import ReaAwards from '../../assets/ReaAwards.png'
 import { Link } from "react-router-dom";

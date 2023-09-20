@@ -1,5 +1,5 @@
 import React from 'react'
-import styling from '../../pages/popups/BookViewingTime.module.css'
+import styling from './BookViewingTime.module.css'
 import MessageInputEnquireNow from './MessageInputEnquireNow'
 const BookViewingTime = () => {
   return (
