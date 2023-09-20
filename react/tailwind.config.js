@@ -1,13 +1,20 @@
-/** @type {import('tailwindcss').Config} */
+// Import the tailwindcss module
+const tailwindcss = require("tailwindcss");
+
+// Define your Tailwind CSS configuration
 module.exports = {
+  // Specify the content to process (for PurgeCSS)
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+
+  // Extend the default theme with your custom styles
   theme: {
     extend: {
       fontFamily: {
-        turners: ["Lato"],
+        turners: ["Lato"], // Example custom font family
       },
     },
     colors: {
+      // Define custom colors
       red100: "#E83335",
       red200: "#C53030",
       red300: "#C53030",
@@ -22,5 +29,8 @@ module.exports = {
       titanium: "#C6C5C0",
     },
   },
-  plugins: [require("daisyui")],
+
+  // Enable the DaisyUI plugin
+  // Note: Make sure you've installed DaisyUI using 'npm install daisyui'
+  plugins: [tailwindcss("daisyui")], // Use tailwindcss function to load DaisyUI
 };
