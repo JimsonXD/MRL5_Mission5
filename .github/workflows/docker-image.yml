@@ -1,0 +1,30 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build the Express backend Docker image
+        working-directory: MRL5_Mission5/express
+        run: docker build . --file Dockerfile-express --tag backend:$(date +%s)
+
+      - name: Build the React frontend Docker image
+        working-directory: MRL5_Mission5/react
+        run: docker build . --file Dockerfile-react --tag frontend:$(date +%s)
+
+
+
+
