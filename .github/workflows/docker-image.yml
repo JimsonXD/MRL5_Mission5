@@ -1,5 +1,5 @@
 name: Build and Push Docker Images
-   
+
 on:
   push:
     branches:
@@ -20,19 +20,13 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       - name: Build and push Express Docker image
-          with:
-          context: .
-          file: ./express/Dockerfile
+        working-directory: ./express
         run: |
-          docker build -t jimsonxd/express-image:latest 
+          docker build -t jimsonxd/express-image:latest .
           docker push jimsonxd/express-image:latest
 
       - name: Build and push React Docker image
-       with:
-          context: .
-          file: ./react/Dockerfile
+        working-directory: ./react
         run: |
-          docker build -t jimsonxd/react-image:latest 
+          docker build -t jimsonxd/react-image:latest .
           docker push jimsonxd/react-image:latest
-
-
