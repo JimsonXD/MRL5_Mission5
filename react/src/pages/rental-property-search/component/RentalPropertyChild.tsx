@@ -28,10 +28,14 @@ interface Property {
   parking: number;
   isHeartClicked: boolean;
 }
+interface SelectedImage {
+  [propertyId: string]: string;
+}
 
 const RentalPropertyChild = ({ property }: { property: Property }) => {
   const [propertyListings, setPropertyListings] = useState<Property[]>([]);
   const [showPopUp, setShowPopUp] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<SelectedImage>({});
 
   useEffect(() => {
     fetch("http://localhost:8080/api/properties")
@@ -65,6 +69,13 @@ const RentalPropertyChild = ({ property }: { property: Property }) => {
 
   const handleClosePopUp = () => {
     setShowPopUp(false);
+  };
+
+  const handleImageClick = (propertyId: string, imageUrl: string) => {
+    setSelectedImage({
+      ...selectedImage,
+      [propertyId]: imageUrl,
+    });
   };
 
   return (
@@ -120,8 +131,8 @@ const RentalPropertyChild = ({ property }: { property: Property }) => {
                   <div>
                     <Link to={`/property-details/${property._id}`}>
                       <img
-                        src={property.imageUrl1}
-                        className="w-full object-cover rounded-lg hover:scale-110 transform transition-transform duration-300 shadow-lg"
+                        src={selectedImage[property._id] || property.imageUrl1}
+                        className="w-full object-cover rounded-lg hover:scale-105 transform transition-transform duration-300 shadow-lg"
                         alt={`Property ${property._id}`}
                         style={{ height: "525px", width: "50vw" }}
                       />
@@ -129,35 +140,39 @@ const RentalPropertyChild = ({ property }: { property: Property }) => {
                   </div>
 
                   <div
-                    className="px-2 w-1/2 "
+                    className="px-2 w-1/2"
                     style={{ height: "525px", width: "50vw" }}
                   >
                     <div className="flex w-1/2 gap-4 pb-4">
                       <img
                         src={property.imageUrl2}
-                        className="w-full object-cover rounded-lg hover:scale-110 transform transition-transform duration-300"
+                        className="w-full object-cover rounded-lg hover:scale-105 transform transition-transform duration-300"
                         alt={`Property ${property._id}`}
                         style={{ height: "250px" }}
+                        onClick={() => handleImageClick(property._id, property.imageUrl2)}
                       />
                       <img
                         src={property.imageUrl3}
-                        className="w-full object-cover rounded-lg hover:scale-110 transform transition-transform duration-300"
+                        className="w-full object-cover rounded-lg hover:scale-105 transform transition-transform duration-300"
                         alt={`Property ${property._id}`}
                         style={{ height: "250px" }}
+                        onClick={() => handleImageClick(property._id, property.imageUrl3)}
                       />
                     </div>
-                    <div className="w-1/2 flex gap-4 pb-2 rounded-lg ">
+                    <div className="w-1/2 flex gap-4 pb-2 rounded-lg">
                       <img
                         src={property.imageUrl4}
-                        className="w-full object-cover rounded-lg hover:scale-110 transform transition-transform duration-300"
+                        className="w-full object-cover rounded-lg hover:scale-105 transform transition-transform duration-300"
                         alt={`Property ${property._id}`}
                         style={{ height: "250px" }}
+                        onClick={() => handleImageClick(property._id, property.imageUrl4)}
                       />
                       <img
                         src={property.imageUrl5}
-                        className="w-full object-cover rounded-lg hover:scale-110 transform transition-transform duration-300"
+                        className="w-full object-cover rounded-lg hover:scale-105 transform transition-transform duration-300"
                         alt={`Property ${property._id}`}
                         style={{ height: "250px" }}
+                        onClick={() => handleImageClick(property._id, property.imageUrl5)}
                       />
                     </div>
                   </div>
@@ -171,7 +186,7 @@ const RentalPropertyChild = ({ property }: { property: Property }) => {
                           icon={faDollarSign}
                           className=" text-red100 pr-2"
                         />
-                        {property.price}
+                        {property.price} per week
                       </p>
 
                       <p className="text-gray-700 no-underline">

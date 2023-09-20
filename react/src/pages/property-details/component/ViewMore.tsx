@@ -58,7 +58,7 @@ const ViewMore = ({ property }: { property: Property }) => {
                     icon={faDollarSign}
                     className="mr-2 text-red100"
                   />
-                       {property.price}</p>
+                       {property.price} per week</p>
                     <p className="text-gray-700">
                     <FontAwesomeIcon
                     icon={faLocationDot}

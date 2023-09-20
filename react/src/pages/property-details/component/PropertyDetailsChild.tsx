@@ -97,7 +97,7 @@ const PropertyDetailsChild = () => {
               <div className="flex w-full px-12 rounded-lg pt-2 pb-2">
                 <img
                   src={image}
-                  className="w-full rounded-lg hover:scale-110 transform transition-transform duration-300"
+                  className="w-full rounded-lg hover:scale-105 transform transition-transform duration-300"
                   alt={property.name}
                   style={{ height: "500px" }}
                 />
@@ -143,7 +143,7 @@ const PropertyDetailsChild = () => {
                     size="sm"
                     className="text-red100"
                   />{" "}
-                  {property.price}
+                  {property.price} per week
                 </p>
               </div>
 

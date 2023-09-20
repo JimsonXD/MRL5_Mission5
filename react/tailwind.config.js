@@ -1,13 +1,17 @@
-/** @type {import('tailwindcss').Config} */
+
+const tailwindcss = require("tailwindcss");
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+
   theme: {
     extend: {
       fontFamily: {
-        turners: ["Lato"],
+        turners: ["Lato"], 
       },
     },
     colors: {
+  
       red100: "#E83335",
       red200: "#C53030",
       red300: "#C53030",
@@ -22,5 +26,7 @@ module.exports = {
       titanium: "#C6C5C0",
     },
   },
-  plugins: [require("daisyui")],
+
+
+  plugins: [tailwindcss("daisyui")],
 };

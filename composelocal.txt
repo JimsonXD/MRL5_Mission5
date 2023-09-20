@@ -1,60 +1,41 @@
 version: '3.8'
 
- 
-
 services:
-
   frontend:
-    image: jimsonxd/front-end:v5
+    build:
+      context: ./react
     ports:
-
       - 3000:3000
-
     networks:
-
       - team3network
-
- 
 
   backend:
-    image: jimsonxd/back-end:v1
+    build:
+      context: ./express
     ports:
-
       - 8080:8080
-
     depends_on:
-
       - mongodb
-
     networks:
-
       - team3network
-
- 
 
   mongodb:
-
     image: mongo:6
-
-    volumes:
-
+    volumes: 
       - database:/data/db
-
     ports:
-
       - 27018:27017
-
     networks:
-
       - team3network
 
- 
-
 volumes:
-
   database:
-
- 
 
 networks:
   team3network:
+
+
+--------------------------------
+Commands: 
+    docker-compose up -d --build
+    docker-compose down
