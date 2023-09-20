@@ -20,13 +20,19 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       - name: Build and push Express Docker image
+          with:
+          context: .
+          file: ./express/Dockerfile
         run: |
-          docker build -t jimsonxd/express-image:latest ./MRL5_Mission5/express
+          docker build -t jimsonxd/express-image:latest 
           docker push jimsonxd/express-image:latest
 
       - name: Build and push React Docker image
+       with:
+          context: .
+          file: ./react/Dockerfile
         run: |
-          docker build -t jimsonxd/react-image:latest ./MRL5_Mission5/react
+          docker build -t jimsonxd/react-image:latest 
           docker push jimsonxd/react-image:latest
 
 
