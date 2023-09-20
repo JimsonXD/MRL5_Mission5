@@ -1,4 +1,4 @@
-name: Build and Push Docker Images
+name: Build and Push Docker Images to DockerHub
 
 on:
   push:
@@ -8,7 +8,6 @@ on:
     branches:
       - main
   workflow_dispatch:
-
 
 jobs:
   build-and-push:
