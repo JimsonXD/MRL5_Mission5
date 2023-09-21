@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const Booking = require("../models/bookingModel");
-const { bookToView } = require("../controllers/bookingController");
+const Booking = require("../src/models/bookingModel");
+const { bookToView } = require("../src/controllers/bookingController");
 
 describe("bookToView Function Unit Test", () => {
     beforeAll(async () => {
