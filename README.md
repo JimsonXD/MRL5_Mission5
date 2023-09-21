@@ -28,8 +28,9 @@ MRL5_Mission5 is a Rental Property Listing Website developed as part of Mission 
 ### Web Pages
 Here are some screenshots of our web pages:
 
-<!-- First Row of Images -->
-<div style="display: flex; justify-content: space-between;">
+<!-- Flex Row of Images -->
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;">
+  <!-- First Row of Images -->
   <div style="flex: 0 23%; margin: 1%;">
     <img src="./github-images/page1.png" alt="Homepage" width="400" height="300">
   </div>
@@ -45,10 +46,8 @@ Here are some screenshots of our web pages:
   <div style="flex: 0 23%; margin: 1%;">
     <img src="./github-images/page4.png" alt="Tenancy Application Page" width="400" height="300">
   </div>
-</div>
 
-<!-- Second Row of Images -->
-<div style="display: flex; justify-content: space-between;">
+  <!-- Second Row of Images -->
   <div style="flex: 0 23%; margin: 1%;">
     <img src="./github-images/page6.png" alt="Confirmation Page" width="400" height="300">
   </div>
@@ -64,17 +63,14 @@ Here are some screenshots of our web pages:
   <div style="flex: 0 23%; margin: 1%;">
     <img src="./github-images/popup-save.png" alt="Save popup" width="400" height="300">
   </div>
-</div>
 
-<!-- Third Row of Images -->
-<div style="display: flex; justify-content: space-between;">
+  <!-- Third Row of Images -->
   <div style="flex: 0 23%; margin: 1%;">
     <img src="./github-images/viewmore.png" alt="View More listing" width="400" height="300">
   </div>
 
-  <!-- Add more images for the third row here if needed -->
-</div>
 
+</div>
 
 ### Evidence
 **Docker Container:**
@@ -88,8 +84,6 @@ Here are some screenshots of our web pages:
 
 **MongoDB Properties:**
 <img src="./github-images/mongodb-properties.png" alt="MongoDB Properties" width="400" height="300">
-
-
 
 ## Getting Started
 To get started with this project, follow these steps:
