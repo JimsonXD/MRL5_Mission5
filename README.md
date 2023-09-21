@@ -28,49 +28,43 @@ MRL5_Mission5 is a Rental Property Listing Website developed as part of Mission 
 ### Web Pages
 Here are some screenshots of our web pages:
 
-<!-- Flex Row of Images -->
-<div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;">
-  <!-- First Row of Images -->
-  <div style="flex: 0 23%; margin: 1%;">
-    <img src="./github-images/page1.png" alt="Homepage" width="400" height="300">
-  </div>
-
-  <div style="flex: 0 23%; margin: 1%;">
-    <img src="./github-images/page2.png" alt="Property Listing Page" width="400" height="300">
-  </div>
-
-  <div style="flex: 0 23%; margin: 1%;">
-    <img src="./github-images/page3.png" alt="Property Details Page" width="400" height="300">
-  </div>
-
-  <div style="flex: 0 23%; margin: 1%;">
-    <img src="./github-images/page4.png" alt="Tenancy Application Page" width="400" height="300">
-  </div>
-
-  <!-- Second Row of Images -->
-  <div style="flex: 0 23%; margin: 1%;">
-    <img src="./github-images/page6.png" alt="Confirmation Page" width="400" height="300">
-  </div>
-
-  <div style="flex: 0 23%; margin: 1%;">
-    <img src="./github-images/popup-booking.png" alt="Booking popup" width="400" height="300">
-  </div>
-
-  <div style="flex: 0 23%; margin: 1%;">
-    <img src="./github-images/popup-enquire.png" alt="Enquire popup" width="400" height="300">
-  </div>
-
-  <div style="flex: 0 23%; margin: 1%;">
-    <img src="./github-images/popup-save.png" alt="Save popup" width="400" height="300">
-  </div>
-
-  <!-- Third Row of Images -->
-  <div style="flex: 0 23%; margin: 1%;">
-    <img src="./github-images/viewmore.png" alt="View More listing" width="400" height="300">
-  </div>
-
-
-</div>
+<!-- Images in a Table -->
+<table>
+  <tr>
+    <td>
+      <img src="./github-images/page1.png" alt="Homepage" width="400" height="300">
+    </td>
+    <td>
+      <img src="./github-images/page2.png" alt="Property Listing Page" width="400" height="300">
+    </td>
+    <td>
+      <img src="./github-images/page3.png" alt="Property Details Page" width="400" height="300">
+    </td>
+    <td>
+      <img src="./github-images/page4.png" alt="Tenancy Application Page" width="400" height="300">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="./github-images/page6.png" alt="Confirmation Page" width="400" height="300">
+    </td>
+    <td>
+      <img src="./github-images/popup-booking.png" alt="Booking popup" width="400" height="300">
+    </td>
+    <td>
+      <img src="./github-images/popup-enquire.png" alt="Enquire popup" width="400" height="300">
+    </td>
+    <td>
+      <img src="./github-images/popup-save.png" alt="Save popup" width="400" height="300">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="./github-images/viewmore.png" alt="View More listing" width="400" height="300">
+    </td>
+    <!-- Add more images for additional rows here if needed -->
+  </tr>
+</table>
 
 ### Evidence
 **Docker Container:**
