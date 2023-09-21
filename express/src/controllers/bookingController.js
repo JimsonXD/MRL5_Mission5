@@ -1,3 +1,34 @@
+const bookingService = require("../services/bookingService");
+
+
+exports.bookToView = async (req, res) => {
+  try {
+    const bookingData = req.body;
+    const result = await bookingService.createBooking(bookingData);
+    return res.status(201).json(result);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+exports.getBookings = async (req, res) => {
+  try {
+    const bookings = await bookingService.getBookings();
+    res.json(bookings);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
+
+
+
+
+
+
+
+
 // const mongoose = require("mongoose");
 // const Booking = require("../models/bookingModel");
 
@@ -54,25 +85,3 @@
 //   }
 // };
 
-
-const bookingService = require("../services/bookingService");
-
-
-exports.bookToView = async (req, res) => {
-  try {
-    const bookingData = req.body;
-    const result = await bookingService.createBooking(bookingData);
-    return res.status(201).json(result);
-  } catch (error) {
-    return res.status(500).json({ message: error.message });
-  }
-};
-
-exports.getBookings = async (req, res) => {
-  try {
-    const bookings = await bookingService.getBookings();
-    res.json(bookings);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
