@@ -25,6 +25,18 @@ MRL5_Mission5 is a Rental Property Listing Website developed as part of Mission 
 1. **Jira Scrum Template**: A project management tool for agile development, helping teams plan, track, and manage their work.
 2. **Teams**: A collaboration platform for communication and teamwork.
 
+### Web Pages
+Here are some screenshots of our web pages:
+
+**Homepage:**
+![Homepage](./github-images/page1.png)
+
+**Property Listing Page:**
+![Property Listing Page](insert_image_url_here)
+
+**User Profile Page:**
+![User Profile Page](insert_image_url_here)
+
 ## Getting Started
 To get started with this project, follow these steps:
 
