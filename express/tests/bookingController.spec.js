@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const Booking = require("../models/bookingModel");
-const { bookToView } = require("../controllers/bookingController");
+const Booking = require("../src/models/bookingModel");
+const { bookToView } = require("../src/controllers/bookingController");
 
 describe("bookToView Function Unit Test", () => {
     beforeAll(async () => {
@@ -19,7 +19,6 @@ describe("bookToView Function Unit Test", () => {
     });
 
     it("should create a new booking", async () => {
-        // Mock request and response objects
         const req = {
             body: {
                 firstName: "John",
@@ -39,10 +38,10 @@ describe("bookToView Function Unit Test", () => {
 
         await bookToView(req, res);
 
-        expect(saveSpy).toHaveBeenCalledTimes(1); // Ensure that save method was called
+        expect(saveSpy).toHaveBeenCalledTimes(1); 
         expect(res.status).toHaveBeenCalledWith(201);
         expect(res.json).toHaveBeenCalledWith({ message: "Booking saved successfully" });
-        expect(Booking).toHaveBeenCalledTimes(1); // Ensure that Booking constructor was called
+        expect(Booking).toHaveBeenCalledTimes(1); 
         expect(Booking.mock.calls[0][0]).toEqual({
             firstName: "John",
             lastName: "Doe",
