@@ -28,46 +28,62 @@ MRL5_Mission5 is a Rental Property Listing Website developed as part of Mission 
 ### Web Pages
 Here are some screenshots of our web pages:
 
-**Homepage:**
-<img src="./github-images/page1.png" alt="Homepage" width="400" height="300">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
 
-**Property Listing Page:**
-<img src="./github-images/page2.png" alt="Property Listing Page" width="400" height="300">
+  <!-- First Row of Images -->
+  <div style="flex: 0 24%; margin: 1%;">
+    <img src="./github-images/page1.png" alt="Homepage" width="400" height="300">
+  </div>
 
-**Property Details Page:**
-<img src="./github-images/page3.png" alt="User Profile Page" width="400" height="300">
+  <div style="flex: 0 24%; margin: 1%;">
+    <img src="./github-images/page2.png" alt="Property Listing Page" width="400" height="300">
+  </div>
 
-**Tenancy Application Page:**
-<img src="./github-images/page4.png" alt="User Profile Page" width="400" height="300">
+  <div style="flex: 0 24%; margin: 1%;">
+    <img src="./github-images/page3.png" alt="Property Details Page" width="400" height="300">
+  </div>
 
-**Confirmation Page:**
-<img src="./github-images/page6.png" alt="User Profile Page" width="400" height="300">
+  <div style="flex: 0 24%; margin: 1%;">
+    <img src="./github-images/page4.png" alt="Tenancy Application Page" width="400" height="300">
+  </div>
 
-**Booking popup:**
-<img src="./github-images/popup-booking.png" alt="User Profile Page" width="400" height="300">
+  <!-- Second Row of Images -->
+  <div style="flex: 0 24%; margin: 1%;">
+    <img src="./github-images/page6.png" alt="Confirmation Page" width="400" height="300">
+  </div>
 
-**Enquire popup:**
-<img src="./github-images/popup-enquire.png" alt="User Profile Page" width="400" height="300">
+  <div style="flex: 0 24%; margin: 1%;">
+    <img src="./github-images/popup-booking.png" alt="Booking popup" width="400" height="300">
+  </div>
 
-**Save popup:**
-<img src="./github-images/popup-save.png" alt="User Profile Page" width="400" height="300">
+  <div style="flex: 0 24%; margin: 1%;">
+    <img src="./github-images/popup-enquire.png" alt="Enquire popup" width="400" height="300">
+  </div>
 
-**View More listing:**
-<img src="./github-images/viewmore.png" alt="User Profile Page" width="400" height="300">
+  <div style="flex: 0 24%; margin: 1%;">
+    <img src="./github-images/popup-save.png" alt="Save popup" width="400" height="300">
+  </div>
 
+  <!-- Third Row of Images -->
+  <div style="flex: 0 24%; margin: 1%;">
+    <img src="./github-images/viewmore.png" alt="View More listing" width="400" height="300">
+  </div>
+
+</div>
 
 ### Evidence
 **Docker Container:**
-<img src="./github-images/docker.png" alt="User Profile Page" width="400" height="300">
+<img src="./github-images/docker.png" alt="Docker Container" width="400" height="300">
 
 **Docker Hub:**
-<img src="./github-images/dockerhub.png" alt="User Profile Page" width="400" height="300">
+<img src="./github-images/dockerhub.png" alt="Docker Hub" width="400" height="300">
 
 **MongoDB Booking:**
-<img src="./github-images/mongodb-booking.png" alt="User Profile Page" width="400" height="300">
+<img src="./github-images/mongodb-booking.png" alt="MongoDB Booking" width="400" height="300">
 
 **MongoDB Properties:**
-<img src="./github-images/mongodb-properties.png" alt="User Profile Page" width="400" height="300">
+<img src="./github-images/mongodb-properties.png" alt="MongoDB Properties" width="400" height="300">
+
 
 
 ## Getting Started
