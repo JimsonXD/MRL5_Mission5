@@ -80,8 +80,7 @@ Here is the evidence of our work:
       **Docker Hub:**
       <img src="./github-images/dockerhub.png" alt="Docker Hub" width="400" height="300">
     </td>
-  </tr>
-  <tr>
+
     <td>
       **MongoDB Booking:**
       <img src="./github-images/mongodb-booking.png" alt="MongoDB Booking" width="400" height="300">
