@@ -1,54 +1,74 @@
-const mongoose = require("mongoose");
-const Booking = require("../src/models/bookingModel");
-const { bookToView } = require("../src/controllers/bookingController");
+const Booking = require("../models/bookingModel");
+const bookingService = require("../services/bookingService");
 
-describe("bookToView Function Unit Test", () => {
-    beforeAll(async () => {
-        await mongoose.connect("mongodb://localhost:27017/testdb", {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
-    }, 10000);
-    afterAll(async () => {
-        await mongoose.disconnect();
-    }, 10000); 
-
-    beforeEach(() => {
-        jest.clearAllMocks();
-    });
-
+describe("bookingService", () => {
+  describe("createBooking", () => {
     it("should create a new booking", async () => {
-        const req = {
-            body: {
-                firstName: "John",
-                lastName: "Doe",
-                phoneNumber: "1234567890",
-                email: "johndoe@example.com",
-                selectedDate: "2023-10-01",
-                selectedTime: "10:00 AM",
-            },
-        };
-        const res = {
-            status: jest.fn().mockReturnThis(),
-            json: jest.fn(),
-        };
+      const bookingData = {
+        firstName: "John",
+        lastName: "Doe",
+        phoneNumber: "1234567890",
+        email: "john@example.com",
+        selectedDate: "2023-09-25",
+        selectedTime: "10:00 AM",
+      };
 
-        const saveSpy = jest.spyOn(Booking.prototype, "save").mockResolvedValueOnce();
+      Booking.prototype.save = jest.fn(() => Promise.resolve());
 
-        await bookToView(req, res);
+      const result = await bookingService.createBooking(bookingData);
 
-        expect(saveSpy).toHaveBeenCalledTimes(1);
-        expect(res.status).toHaveBeenCalledWith(201);
-        expect(res.json).toHaveBeenCalledWith({ message: "Booking saved successfully" });
-        expect(Booking).toHaveBeenCalledTimes(1);
-        expect(Booking.mock.calls[0][0]).toEqual({
-            firstName: "John",
-            lastName: "Doe",
-            phoneNumber: "1234567890",
-            email: "johndoe@example.com",
-            selectedDate: "2023-10-01",
-            selectedTime: "10:00 AM",
-        });
+      expect(result).toEqual({ message: "Booking saved successfully" });
+      expect(Booking.prototype.save).toHaveBeenCalledTimes(1);
     });
 
+    it("should throw an error when required fields are missing", async () => {
+      const bookingData = {
+      };
+
+      try {
+        await bookingService.createBooking(bookingData);
+      } catch (error) {
+        expect(error.message).toEqual("All fields are required");
+      }
+    });
+
+    it("should throw an error when saving fails", async () => {
+      const bookingData = {
+      };
+
+      Booking.prototype.save = jest.fn(() => Promise.reject(new Error("MongoDB error")));
+
+      try {
+        await bookingService.createBooking(bookingData);
+      } catch (error) {
+        expect(error.message).toEqual("Error saving booking to MongoDB");
+      }
+    });
+  });
+
+  describe("getBookings", () => {
+    it("should retrieve all bookings", async () => {
+      const fakeBookings = [
+        { firstName: "John", lastName: "Doe" },
+        { firstName: "Jane", lastName: "Smith" },
+      ];
+
+      Booking.find = jest.fn(() => ({ sort: () => Promise.resolve(fakeBookings) }));
+
+      const result = await bookingService.getBookings();
+
+      expect(result).toEqual(fakeBookings);
+      expect(Booking.find).toHaveBeenCalledTimes(1);
+    });
+
+    it("should throw an error when fetching fails", async () => {
+      Booking.find = jest.fn(() => ({ sort: () => Promise.reject(new Error("MongoDB error")) }));
+
+      try {
+        await bookingService.getBookings();
+      } catch (error) {
+        expect(error.message).toEqual("Failed to fetch bookings");
+      }
+    });
+  });
 });
