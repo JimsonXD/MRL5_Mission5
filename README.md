@@ -73,24 +73,26 @@ Here is the evidence of our work:
 <table>
   <tr>
     <td>
-      **Docker Container:**
+      <h2>Docker Container</h2>
       <img src="./github-images/docker.png" alt="Docker Container" width="400" height="300">
     </td>
     <td>
-      **Docker Hub:**
+      <h2>Docker Hub</h2>
       <img src="./github-images/dockerhub.png" alt="Docker Hub" width="400" height="300">
     </td>
-
+  </tr>
+  <tr>
     <td>
-      **MongoDB Booking:**
+      <h2>MongoDB Booking</h2>
       <img src="./github-images/mongodb-booking.png" alt="MongoDB Booking" width="400" height="300">
     </td>
     <td>
-      **MongoDB Properties:**
+      <h2>MongoDB Properties</h2>
       <img src="./github-images/mongodb-properties.png" alt="MongoDB Properties" width="400" height="300">
     </td>
   </tr>
 </table>
+
 
 ## Getting Started
 To get started with this project, follow these steps:
