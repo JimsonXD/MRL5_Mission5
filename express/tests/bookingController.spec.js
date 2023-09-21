@@ -1,5 +1,5 @@
-const Booking = require("../models/bookingModel");
-const bookingService = require("../services/bookingService");
+const Booking = require("../src/models/bookingModel");
+const bookingService = require("../src/services/bookingService");
 
 describe("bookingService", () => {
   describe("createBooking", () => {
