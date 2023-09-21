@@ -67,17 +67,31 @@ Here are some screenshots of our web pages:
 </table>
 
 ### Evidence
-**Docker Container:**
-<img src="./github-images/docker.png" alt="Docker Container" width="400" height="300">
+Here is the evidence of our work:
 
-**Docker Hub:**
-<img src="./github-images/dockerhub.png" alt="Docker Hub" width="400" height="300">
-
-**MongoDB Booking:**
-<img src="./github-images/mongodb-booking.png" alt="MongoDB Booking" width="400" height="300">
-
-**MongoDB Properties:**
-<img src="./github-images/mongodb-properties.png" alt="MongoDB Properties" width="400" height="300">
+<!-- Images in a Table -->
+<table>
+  <tr>
+    <td>
+      **Docker Container:**
+      <img src="./github-images/docker.png" alt="Docker Container" width="400" height="300">
+    </td>
+    <td>
+      **Docker Hub:**
+      <img src="./github-images/dockerhub.png" alt="Docker Hub" width="400" height="300">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      **MongoDB Booking:**
+      <img src="./github-images/mongodb-booking.png" alt="MongoDB Booking" width="400" height="300">
+    </td>
+    <td>
+      **MongoDB Properties:**
+      <img src="./github-images/mongodb-properties.png" alt="MongoDB Properties" width="400" height="300">
+    </td>
+  </tr>
+</table>
 
 ## Getting Started
 To get started with this project, follow these steps:
