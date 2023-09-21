@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const Booking = require("../src/models/bookingModel");
-const { bookToView } = require("../src/controllers/bookingController");
+const Booking = require("../models/bookingModel");
+const { bookToView } = require("../controllers/bookingController");
 
 describe("bookToView Function Unit Test", () => {
     beforeAll(async () => {
@@ -8,11 +8,10 @@ describe("bookToView Function Unit Test", () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
-    });
-
+    }, 10000);
     afterAll(async () => {
         await mongoose.disconnect();
-    });
+    }, 10000); 
 
     beforeEach(() => {
         jest.clearAllMocks();
@@ -38,10 +37,10 @@ describe("bookToView Function Unit Test", () => {
 
         await bookToView(req, res);
 
-        expect(saveSpy).toHaveBeenCalledTimes(1); 
+        expect(saveSpy).toHaveBeenCalledTimes(1);
         expect(res.status).toHaveBeenCalledWith(201);
         expect(res.json).toHaveBeenCalledWith({ message: "Booking saved successfully" });
-        expect(Booking).toHaveBeenCalledTimes(1); 
+        expect(Booking).toHaveBeenCalledTimes(1);
         expect(Booking.mock.calls[0][0]).toEqual({
             firstName: "John",
             lastName: "Doe",
@@ -51,4 +50,5 @@ describe("bookToView Function Unit Test", () => {
             selectedTime: "10:00 AM",
         });
     });
+
 });
