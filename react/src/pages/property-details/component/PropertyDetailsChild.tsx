@@ -218,7 +218,7 @@ const PropertyDetailsChild = () => {
         <div className="flex w-full items-center pl-28 gap-6 p-8">
           <button
             onClick={openPopupB}
-            className="py-2.5 px-8 rounded-lg text-white bg-red100 hover:shadow-lg "
+            className="py-2.5 px-8 rounded-lg text-white bg-red100 hover:bg-red300 hover:shadow-lg "
           >
             Book to view the property
           </button>
