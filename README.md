@@ -29,13 +29,46 @@ MRL5_Mission5 is a Rental Property Listing Website developed as part of Mission 
 Here are some screenshots of our web pages:
 
 **Homepage:**
-![Homepage](./github-images/page1.png)
+<img src="./github-images/page1.png" alt="Homepage" width="400" height="300">
 
 **Property Listing Page:**
-![Property Listing Page](insert_image_url_here)
+<img src="./github-images/page2.png" alt="Property Listing Page" width="400" height="300">
 
-**User Profile Page:**
-![User Profile Page](insert_image_url_here)
+**Property Details Page:**
+<img src="./github-images/page3.png" alt="User Profile Page" width="400" height="300">
+
+**Tenancy Application Page:**
+<img src="./github-images/page4.png" alt="User Profile Page" width="400" height="300">
+
+**Confirmation Page:**
+<img src="./github-images/page6.png" alt="User Profile Page" width="400" height="300">
+
+**Booking popup:**
+<img src="./github-images/popup-booking.png" alt="User Profile Page" width="400" height="300">
+
+**Enquire popup:**
+<img src="./github-images/popup-enquire.png" alt="User Profile Page" width="400" height="300">
+
+**Save popup:**
+<img src="./github-images/popup-save.png" alt="User Profile Page" width="400" height="300">
+
+**View More listing:**
+<img src="./github-images/viewmore.png" alt="User Profile Page" width="400" height="300">
+
+
+### Evidence
+**Docker Container:**
+<img src="./github-images/docker.png" alt="User Profile Page" width="400" height="300">
+
+**Docker Hub:**
+<img src="./github-images/dockerhub.png" alt="User Profile Page" width="400" height="300">
+
+**MongoDB Booking:**
+<img src="./github-images/mongodb-booking.png" alt="User Profile Page" width="400" height="300">
+
+**MongoDB Properties:**
+<img src="./github-images/mongodb-properties.png" alt="User Profile Page" width="400" height="300">
+
 
 ## Getting Started
 To get started with this project, follow these steps:
