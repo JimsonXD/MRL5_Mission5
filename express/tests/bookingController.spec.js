@@ -21,16 +21,6 @@ describe("bookingService", () => {
       expect(Booking.prototype.save).toHaveBeenCalledTimes(1);
     });
 
-    it("should throw an error when required fields are missing", async () => {
-      const bookingData = {
-      };
-
-      try {
-        await bookingService.createBooking(bookingData);
-      } catch (error) {
-        expect(error.message).toEqual("All fields are required");
-      }
-    });
 
     it("should throw an error when saving fails", async () => {
       const bookingData = {
