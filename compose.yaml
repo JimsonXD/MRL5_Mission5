@@ -9,7 +9,7 @@ services:
       - team3network
 
   backend:
-    image: jimsonxd/back-end:v1
+    image: jimsonxd/back-end:v1 
     ports:
       - 8080:8080
     depends_on:
