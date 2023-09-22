@@ -2,14 +2,14 @@ version: '3.8'
 
 services:
   frontend:
-    image: jimsonxd/react-image:latest
+    image: jimsonxd/front-end:v5
     ports:
       - 3000:3000
     networks:
       - team3network
 
   backend:
-    image: jimsonxd/express-image:latest
+    image: jimsonxd/back-end:v1
     ports:
       - 8080:8080
     depends_on:
