@@ -6,7 +6,6 @@ const app = express();
 require('dotenv').config();
 
 const PORT = 8080;
-git;
 const MONGODB_URI = 'mongodb://mongodb:27017/mydb';
 const CORS_ORIGIN = 'http://localhost:3000';
 
