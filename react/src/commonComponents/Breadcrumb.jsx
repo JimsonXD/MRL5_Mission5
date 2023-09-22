@@ -3,7 +3,7 @@ import React from 'react';
 function Breadcrumb({ breadcrumbs }) {
   return (
     <div className="text-sm breadcrumbs bg-white px-28">
-      <ul>
+      {/* <ul>
         {breadcrumbs.map((breadcrumb, index) => (
           <li key={index}>
             {breadcrumb.link ? (
@@ -13,7 +13,7 @@ function Breadcrumb({ breadcrumbs }) {
             )}
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 }
