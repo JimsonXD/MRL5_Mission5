@@ -1,9 +1,10 @@
 name: CI2
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["CI1"]
+    types:
+      - completed
 
 env:
   NODE_VERSION: "16.x"
