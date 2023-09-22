@@ -1,6 +1,6 @@
-ARG NODE_VERSION=14
+ARG NODE_VERSION=19.5.0
 
-FROM arm64v8/node:${NODE_VERSION}-alpine
+FROM node:${NODE_VERSION}-alpine
 
 ENV NODE_ENV production
 
