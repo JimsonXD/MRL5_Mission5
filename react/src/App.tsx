@@ -9,7 +9,7 @@ import MyTenancyApplication from "./pages/my-tenancy-application/MyTenancyApplic
 import Application from "./pages/application/Application";
 import ConfirmationDetails from "./pages/confirmation-details/ConfirmationDetails";
 import Home1 from "./commonComponents/week1/Home1";
-;
+
 
 
 
@@ -27,10 +27,9 @@ function App() {
         <Route path="/application" Component={Application} />
         <Route path="/confirmation-details" Component={ConfirmationDetails} />
 
-        <Route path="/week1" Component={Main} /> 
+        {/* <Route path="/week1" Component={Main} /> 
         <Route path="week01" Component={CrudWeek1} />     
-
-        <Route path="/home1" Component={Home1} /> 
+        <Route path="/home1" Component={Home1} />  */}
 
           
 

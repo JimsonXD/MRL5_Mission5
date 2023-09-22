@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   frontend:
-    image: jimsonxd/front-end:v1
+    image: jimsonxd/front-end:v5
     ports:
       - 3000:3000
     networks:
