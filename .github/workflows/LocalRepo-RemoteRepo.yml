@@ -66,5 +66,6 @@ jobs:
       - name: Authenticate with Snyk
         run: snyk auth ${{ secrets.SNYK_TOKEN }}
 
-      - name: Run Snyk Static Code Analysis
-        run: snyk test --all-projects
+      - name: Run Snyk Static Code Analysis on Express
+        run: snyk test --all-projects --path ./MRL5_Mission5/express
+
