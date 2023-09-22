@@ -11,7 +11,7 @@ name: Build and Push Docker Images to DockerHub (CD)
 
 on:
   workflow_run:
-    workflows: ["CI"]
+    workflows: ["CI2"]
     types:
       - completed
 
