@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./Mission5/react
+        working-directory: react
 
     steps:
       - name: Checkout code
