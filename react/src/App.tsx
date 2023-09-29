@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Main from "./commonComponents/week1/Main";
-import CrudWeek1 from "./commonComponents/week1/CrudWeek1"
+// import Main from "./commonComponents/week1/Main";
+// import CrudWeek1 from "./commonComponents/week1/CrudWeek1"
 import Home from "./pages/home/Home";
 import RentalPropertySearch from "./pages/rental-property-search/RentalPropertySearch";
 import PropertyDetails from "./pages/property-details/PropertyDetails";
 import MyTenancyApplication from "./pages/my-tenancy-application/MyTenancyApplication";
 import Application from "./pages/application/Application";
 import ConfirmationDetails from "./pages/confirmation-details/ConfirmationDetails";
-import Home1 from "./commonComponents/week1/Home1";
+// import Home1 from "./commonComponents/week1/Home1";
 
 
 
