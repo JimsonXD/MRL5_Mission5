@@ -2,6 +2,7 @@ name: Netlify Deployment
 
 on:
   push:
+  pull_request:
     branches:
       - main
 
@@ -18,14 +19,24 @@ jobs:
           node-version: 14
 
       - name: Navigate to React app folder
-        working-directory: ./react
+        working-directory: ./Mission5/react
+        run: cd react
 
-      - name: Install dependencies and build
+      - name: Install React dependencies and build
         run: |
           npm install
           npm run build
         env:
           CI: true
+
+      - name: Navigate to Express app folder
+        working-directory: ./Mission5/express
+        run: cd express
+
+      - name: Install Express dependencies and start server
+        run: |
+          npm install
+          npm start
 
       - name: Deploy to Netlify
         run: |
