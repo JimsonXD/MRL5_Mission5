@@ -27,7 +27,7 @@ jobs:
           npm install
           npm run build
         env:
-          CI: false
+          CI: true
 
       - name: Deploy to Netlify
         run: |
