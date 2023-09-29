@@ -1,0 +1,36 @@
+name: Netlify Deployment
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+        env:
+          CI: true
+
+      - name: Deploy to Netlify
+        run: |
+          npm install -g netlify-cli
+          netlify login # You might need to set up Netlify authentication before running this command
+          netlify deploy --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }} # Add your Netlify personal access token as a secret in your GitHub repository settings
