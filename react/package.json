@@ -1,6 +1,7 @@
 {
   "name": "rental-property-website",
   "version": "0.1.0",
+  "homepage": "https://darling-smakager-f38346.netlify.app",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
