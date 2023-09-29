@@ -19,7 +19,6 @@ jobs:
           node-version: 14
 
       - name: Navigate to React app folder
-        working-directory: ./Mission5/react
         run: cd react
 
       - name: Install React dependencies and build
@@ -28,15 +27,6 @@ jobs:
           npm run build
         env:
           CI: true
-
-      - name: Navigate to Express app folder
-        working-directory: ./Mission5/express
-        run: cd express
-
-      - name: Install Express dependencies and start server
-        run: |
-          npm install
-          npm start
 
       - name: Deploy to Netlify
         run: |
