@@ -19,7 +19,7 @@ jobs:
           node-version: 16
 
       - name: Navigate to Mission5 folder
-        run: cd MRL5_Mission5
+        run: cd /react
 
       - name: Install React dependencies and build
         run: |
