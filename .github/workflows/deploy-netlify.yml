@@ -16,10 +16,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 16
 
-      - name: Navigate to React app folder
-        run: cd react
+      - name: Navigate to Mission5 folder
+        run: cd Mission5
 
       - name: Install React dependencies and build
         run: |
